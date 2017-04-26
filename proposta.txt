@@ -1,0 +1,275 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding="3"  >
+
+  <tr ><td><table>
+  
+    <tr ><td ><table  >
+			<tr  >
+        <td colspan=3>Operadora</td>
+        <td colspan=3>Tipo Contrato</td>     
+        <td id=tdCPF>CPF</td>
+        <td width="10px">&nbsp;</td>
+        <td width="50px">Vigência</td>
+        <td width="90px">&nbsp;</td>
+        
+        <td align=center width="136px" rowspan="2"  align="right" id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+        onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+        <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+        </td>
+        <td width="10px">&nbsp;</td>
+        <td align=right   rowspan="2" ><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td>
+			</tr>
+			<tr>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher operadora (ou pressione F8)"  
+            onclick="AuxilioF7('txtOPERADORA')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly disabled id="txtOPERADORA" tabindex="999"  value="vOPERADORA" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;WIDTH:90px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblOPERADORA">v_OPERADORA</span></td>
+			
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher tipo de contrato (ou pressione F8)" 
+            onclick="AuxilioF7('txtTIPO_CONTRATO')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly id="txtTIPO_CONTRATO" tabindex="1"  value="vTIPO_CONTRATO" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblTIPO_CONTRATO">v_TIPO_CONTRATO</span></td>
+        
+        <td><input type="text" readonly id="txtCPF" tabindex="2"  value="vCPF" maxlength="14" size="30"
+            onKeyPress="return sistema_formatar(event, this, '000.000.000-00');"></td>
+
+        <td width="10px">&nbsp;</td>
+        <td><input type="text" readonly id="txtASSINATURA" tabindex="3" value="vASSINATURA" maxlength="8" size="12" 
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"></td>
+			</tr>
+		</table></td></tr>
+   
+  </td></tr></table>					
+
+
+  <tr><td><table width="100%" style="color:grey;">  
+
+    <tr><td><table>
+			<tr>
+        <td width="220px">Contratante</td>
+        <td width="20px">&nbsp;</td>
+        <td colspan="2">Proposta</td>
+			</tr>
+			<tr>
+        <td><input type="text" readonly id="txtCONTRATANTE" tabindex="4"  value="vCONTRATANTE" maxlength="100" size="100"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtNUMPROPOSTA" tabindex="5"  value="vPROPOSTA" 
+          maxlength="20" size="20" ></td>
+        <td align="left" width="30px" id="okPROPOSTA" style="color:red">&nbsp;</td>
+
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+			<tr>
+        <td width="80px">Data nascimento</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>Sexo</td>
+			  <td>&nbsp;&nbsp;</td>
+        <td>Endereço</td>
+        <td>&nbsp;&nbsp;</td>              
+        <td>Nº</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>Complemento</td>
+        <td>&nbsp;&nbsp;</td>
+        <td colspan="2">Bairro</td>
+			</tr>
+			<tr>
+        <td><input type="text" readonly id="txtNASCCONTRATANTE" tabindex="6" value="vNASCCONTRATANTE" maxlength="8" size="12" 
+            onKeyPress="return sistema_formatar(event, this, '00/00/00');"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtSEXOC" tabindex="7"  value="vSEXOC" maxlength="1" size="2"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtENDERECO" tabindex="190"  value="vENDERECO" maxlength="60" size="40"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtEND_NUMERO" tabindex="9"  value="vEND_NUMERO" maxlength="10" size="5"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtEND_COMPLEMENTO" tabindex="10"  value="vEND_COMPLEMENTO" maxlength="20" size="35"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtBAIRRO" tabindex="191"  value="vBAIRRO" maxlength="4" size="4"></td>
+        <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblBAIRRO">v_BAIRRO</span></td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+      <tr>
+        <td>Município </td>
+        <td>&nbsp;&nbsp;</td>
+        <td>UF</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>CEP</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>Fone Res.</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>Fone Com.</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>Celular</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>E-mail</td>
+			</tr>
+			<tr>
+        <td><input type="text" readonly id="txtMUNICIPIO" tabindex="99"  value="vMUNICIPIO" maxlength="30" size="32"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtUF" tabindex="112"  value="vUF" maxlength="2" size="3"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtCEP" tabindex="8"  value="vCEP" maxlength="9" size="11"
+            onKeyPress="return sistema_formatar(event, this, '00000-000');"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtFONERES" tabindex="11"  value="vFONERES" maxlength="13" size="20"
+                    onKeyPress="return sistema_formatar(event, this, '(00)0000-0000');"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtFONECOM" tabindex="12"  value="vFONECOM" maxlength="13" size="20"
+                  onKeyPress="return sistema_formatar(event, this, '(00)0000-0000');"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtCELULAR" tabindex="13"  value="vCELULAR" maxlength="13" size="20"
+                      onKeyPress="return sistema_formatar(event, this, '(00)0000-0000');"></td>
+        <td>&nbsp;</td>
+        <td><input type="text" readonly id="txtEMAIL" tabindex="14"  value="vEMAIL" maxlength="100" size="38"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <tr>
+      <td colspan="3">Corretor</td>
+      <td >Quantidade mensalidades</td>
+      </tr>
+
+      <tr>            
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)" 
+          onclick="AuxilioF7('txtREPRESENTANTE')";><image src="images/setaBAIXO.gif"></td>
+      <td><input type="text" readonly id="txtREPRESENTANTE" tabindex="15"  value="vREPRESENTANTE" maxlength="4" size="4"
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td style="padding-left:5px;WIDTH:190px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblREPRESENTANTE">v_REPRESENTANTE</span></td>
+
+  		<td><table>
+        <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(1);">
+          <input type="radio" id="qtdeMENS" name="qtdeMENS" value="1"  checkedQTDEMENS_1 >10 (padrão)&nbsp;&nbsp;
+        </td>
+
+        <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(2);">
+          <input type="radio" id="qtdeMENS" name="qtdeMENS" value="2" checkedQTDEMENS_2 >15 (Contrato idoso)&nbsp;&nbsp;
+        </td>
+        <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(3);">
+          <input type="radio" id="qtdeMENS" name="qtdeMENS" value="3" checkedQTDEMENS_3 >100 (Vitalício)&nbsp;&nbsp;
+        </td>
+  		</table></td>
+
+      
+      </tr>
+    </table></td></tr>  
+      
+    <tr><td><table>
+      <tr>  
+      <td>Qtde vidas:</td>                
+      <td width="20px">&nbsp;</td>
+      <td align=right>Vlr Contrato</td>
+      <td width="20px">&nbsp;</td>
+      <td align=right>Vlr Adesão</td>
+      <td width="20px">&nbsp;</td>
+      <td align=right>Vlr Total</td>
+      <td width="20px">&nbsp;</td>
+      <td align=right>Vlr Recebido</td>
+      <td width="120px">&nbsp;</td>
+      <td align=right>Vlr Produção</td>
+      <td width="10px">&nbsp;</td>
+      <td align=right>Vlr Plantão</td>
+      <td align=right>&nbsp;</td>
+      </tr>
+
+      <tr>
+      <td><input type="text" readonly id="txtUSUARIOS" tabindex="16"  value="vQTDEUSUARIOS" maxlength="4" size="4"
+            onKeyPress="return sistema_formatar(event, this, '00');"></td>
+      <td>&nbsp;</td>
+      <td><input type="text" id="txtvlrCONTRATO" tabindex="17"  value="vvlrCONTRATO" style="text-align:right" 
+        maxlength="10" size="15" readonly_2 onkeyPress="return FormatMoney(this.value, event);"></td>
+      <td>&nbsp;</td>  
+      <td><input type="text" id="txtvlrADESAO" tabindex="18"  value="vvlrADESAO"  style="text-align:right" 
+        maxlength="10" size="15" readonly_2  onkeyPress="return FormatMoney(this.value, event);"></td>
+      <td>&nbsp;</td> 
+      <td><input type="text" id="txtvlrTOTAL" tabindex="19"  value="vvlrTOTAL"  style="text-align:right" 
+        maxlength="10" size="15" readonly_2  onkeyPress="return FormatMoney(this.value, event);"></td>
+      <td>&nbsp;</td>  
+      <td><input type="text" id="txtvlrRECEBIDO" tabindex="20"  value="vvlrRECEBIDO"  style="text-align:right" 
+        maxlength="10" size="15" readonly_2  onkeyPress="return FormatMoney(this.value, event);"></td>
+      <td>&nbsp;</td>  
+      <td><input type="text" id="txtvlrPRODUCAO" tabindex="21"  value="vvlrPRODUCAO"    style="text-align:right" 
+        maxlength="10" size="15" readonly_2  onkeyPress="return FormatMoney(this.value, event);"></td>
+      <td>&nbsp;</td>  
+      <td><input type="text" readonly_2  id="txtvlrPLANTAO" tabindex="22"  value="vvlrPLANTAO"   style="text-align:right" 
+        maxlength="10" size="15" onkeyPress="return FormatMoney(this.value, event);"></td>
+      <td style="padding-left:5px;WIDTH:50px" align="right"><span class="lblPADRAO_VLR_CMP" id="lblPERC">&nbsp;</span></td>
+      </tr>         
+    </table></td></tr>
+    
+    <tr><td><table>
+      <tr>
+      <td colspan="3">Comissão do corretor (específica para este contrato)</td>
+      <td colspan="3">Comissão da AllCross (específica para este contrato)</td>
+      <td >&nbsp;</td>
+      </tr>
+      
+      <tr>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher tipo de comissão"
+            onclick="AuxilioF7('txtCOMISSAO_REPRESENTANTE', 1 v_PERMISSAO)";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" v_READONLY id="txtCOMISSAO_REPRESENTANTE" tabindex="114"  value="vCOMISSAO_REPRESENTANTE" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;WIDTH:270px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblCOMISSAO_REPRESENTANTE">v_COMISSAO_REPRESENTANTE</span></td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher tipo de comissao"
+        onclick="AuxilioF7('txtCOMISSAO_PRESTADORA', 1 v_PERMISSAO)";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" v_READONLY id="txtCOMISSAO_PRESTADORA" tabindex="113"  value="vCOMISSAO_PRESTADORA" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;WIDTH:300px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblCOMISSAO_PRESTADORA">v_COMISSAO_PRESTADORA</span></td>
+
+      </tr>
+    </table></td></tr>
+
+    <tr><td><table>
+      <tr>
+      <td>Data envio para operadora: <font color=blue>vDATA_ENVIO</font></td>
+      <td width="100px">&nbsp;</td>
+      <td>Data reenvio para operadora: <font color=blue>vDATA_REENVIO</font></td>
+      <td width="100px">&nbsp;</td>
+      <td>Nº contrato: </td>
+      <td><input type="text" readonly id="txtCONTRATO" tabindex="300"  value="vCONTRATO" maxlength="20" size="20" ></td>
+      </tr>
+    </table></td></tr>
+
+
+		<tr><td><table width="100%">
+      <tr width="100%"><td width="47%"><hr></td><td>Observações</td><td width="47%"><hr></td></tr>
+    </table></td></tr>
+
+		<tr><td><table cellpadding="0" cellspacing="0">
+      <tr><td>
+        <textarea onclick="javascript:cfoco='txtOBS';" id="txtOBS" rows="3" cols="160"
+        style="color:blue;font-family:verdana;font-size:10px;">&nbsp;</textarea>
+      </td></tr> 
+    </table></td></tr>
+
+		<tr><td><table cellpadding="0" cellspacing="0" width="100%" >
+      <tr>
+        <td width="85%">@infoCADASTRO&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Sequência:&nbsp;&nbsp;<span id="lblSEQUENCIA" style="font-size:9px;color:blue;font-weight:normal;">@sequencia</span></td>
+      </tr> 
+    </table></td></tr>
+    
+        
+    
+    
+ </table></td></tr> 
+
+ <input type="hidden" id="numREG" value="@numREG">
+ <input type="hidden" id="dataCADASTRO" value="@dataCADASTRO"> 
+ <input type="hidden" id="dataASSINATURA" value="@dataASSINATURA">
+  <input id="numregPropostaEntregueCaixa" type="hidden" value="@numregPropostaEntregueCaixa" />
+
+    
+</table>
+</td></tr></table>

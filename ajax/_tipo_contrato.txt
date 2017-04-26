@@ -1,0 +1,171 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table >  
+
+		<tr><td ><table  border=0>  					
+
+    <tr><td><table >
+    
+      <tr><td ><table><tr >
+        <td width="100px">Operadora:&nbsp;&nbsp;</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher operadora (ou pressione F8)" 
+            onclick="AuxilioF7('txtOPERADORA')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" id="txtOPERADORA" tabindex="1"  value="vOPERADORA" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;width:100px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblOPERADORA">v_OPERADORA</span></td>
+			</tr></table></td></tr>
+
+      <tr><td><table><tr>
+        <td width="100px">Descrição:&nbsp;&nbsp;</td><td><input type=text id="txtDESCRICAO" tabindex="2" readonly value="vNOME" maxlength="35" size="50"></td>
+      </tr></table></td></tr>
+      
+      <tr><td><table><tr>
+        <td width="100px">Valor adesão: </td>
+        <td><input type="text" id="txtADESAO" tabindex="3" value="vADESAO" 
+          maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+      </tr></table></td></tr>
+
+      <tr><td><table><tr>
+        <td>&nbsp;</td>
+      </tr></table></td></tr>
+
+
+    	<tr><td><table>
+    	  <td width="150px" >Clientes identificados por:&nbsp;</td>
+
+    
+        <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(1);">
+          <input type="radio" id="tipo" name="tipo" value="1" checked_1 >CPF&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(2);">
+          <input type="radio" id="tipo" name="tipo" value="2" checked_2>CPNJ
+        </td>
+    	</table></td></tr>
+
+
+    	<tr><td><table>
+    	  <td><b>Regras para cálculo do valor de plantão</b></td>
+    	</table></td></tr>
+    
+      <tr><td><table>
+    	  <td width="170px">Quantidade de vidas entre&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtQTDE1" tabindex="4"  value="vQTDE1" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtQTDE2" tabindex="5"  value="vQTDE2" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>,&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtPERC1" tabindex="6"  value="vPERC1" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '000');"></td>
+    	  <td>&nbsp;&nbsp;% sobre valor do contrato</td>
+    	</table></td></tr>
+
+      <tr><td><table>
+    	  <td width="170px">&nbsp;</td>
+        <td><input type="text" id="txtQTDE3" tabindex="7"  value="vQTDE3" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtQTDE4" tabindex="8"  value="vQTDE4" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>,&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtPERC2" tabindex="9"  value="vPERC2" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '000');"></td>
+    	  <td></td>
+    	</table></td></tr>
+
+      <tr><td><table>
+    	  <td width="170px">&nbsp;</td>
+        <td><input type="text" id="txtQTDE5" tabindex="10"  value="vQTDE5" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtQTDE6" tabindex="11"  value="vQTDE6" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>,&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtPERC3" tabindex="12"  value="vPERC3" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '000');"></td>
+    	  <td></td>
+    	</table></td></tr>
+
+			<tr><td><table><tr>
+        <td><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar();">
+        <tr>
+        <td onclick="checar();"><input type="checkbox" id="vlrPRODUCAO" name="vlrPRODUCAO" value="" checkedPROD/></td>
+        <td>Usar regra também para valor de produção</td></td>
+        </tr></table></td>         
+  		</table></td></tr>
+  		
+
+    	<tr><td><table>
+    	  <td><b>Aplicar comissão (sobre confirmações) para as qtdes de vidas:</b></td>
+    	</table></td></tr>
+    
+      <tr><td><table>
+    	  <td width="50px">Entre&nbsp;</td>      
+        <td><input type="text" id="txtVIDAS1" tabindex="13"  value="vVIDAS1" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtVIDAS2" tabindex="14"  value="vVIDAS2" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	</table></td></tr>
+    	
+      <tr><td><table>
+    	  <td width="50px">&nbsp;</td>      
+        <td><input type="text" id="txtVIDAS3" tabindex="15"  value="vVIDAS3" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtVIDAS4" tabindex="16"  value="vVIDAS4" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	</table></td></tr>
+
+      <tr><td><table>
+    	  <td width="50px">&nbsp;</td>      
+        <td><input type="text" id="txtVIDAS5" tabindex="17"  value="vVIDAS5" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtVIDAS6" tabindex="18"  value="vVIDAS6" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	</table></td></tr>
+    	
+      <tr><td><table>
+    	  <td width="50px">&nbsp;</td>      
+        <td><input type="text" id="txtVIDAS7" tabindex="19"  value="vVIDAS7" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtVIDAS8" tabindex="20"  value="vVIDAS8" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	</table></td></tr>
+
+      <tr><td><table>
+    	  <td width="50px">&nbsp;</td>      
+        <td><input type="text" id="txtVIDAS9" tabindex="21"  value="vVIDAS9" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	  <td>&nbsp;&nbsp;e&nbsp;&nbsp;</td>
+        <td><input type="text" id="txtVIDAS10" tabindex="22"  value="vVIDAS10" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+    	</table></td></tr>
+    	
+    	
+
+  		
+
+      
+		</table></td></tr>
+		
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+    
+</table>
+</td></tr></table>

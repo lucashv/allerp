@@ -1,0 +1,111 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:20%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table>
+      <td width="85px">Nome: </td>
+        <td><input type="text" readonly id="txtNOME" tabindex="1"  value="vNOME"   maxlength="60" size="80"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">Telefone(s): </td>
+        <td><input type="text" readonly id="txtFONES" tabindex="2"  value="vFONES"   maxlength="60" size="80"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px"> </td>
+      <td><font color=red><b>NÃO USE TRAÇO (-), SOMENTE NÚMEROS</b></td>
+		</table></td></tr>
+
+
+		<tr><td><table>  					
+			<tr>
+				<td width="85px">Produto:</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher produto (ou pressione F8)"  
+            onclick="AuxilioF7('txtATENDIMENTO_PRODUTO')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly  id="txtATENDIMENTO_PRODUTO" tabindex="3"  value="vATENDIMENTO_PRODUTO" maxlength="4" size="6" value='vATENDIMENTO_PRODUTO'
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblATENDIMENTO_PRODUTO">vnomeATENDIMENTO_PRODUTO</span></td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+				<td width="85px">Origem:</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher indicação (ou pressione F8)"  
+            onclick="AuxilioF7('txtINDICACAO')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly  id="txtINDICACAO" tabindex="4"  value="vINDICACAO" maxlength="4" size="6" 
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblINDICACAO">vnomeINDICACAO</span></td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+				<td width="85px">Corretor:</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)"  
+            onclick="AuxilioF7('txtREPRESENTANTE')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly  id="txtREPRESENTANTE" tabindex="5"  value="vREPRESENTANTE" maxlength="4" size="6" 
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblREPRESENTANTE">vnomeREPRESENTANTE</span></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">Observações: </td>
+        <td><input type="text" readonly id="txtOBS" tabindex="6"  value="vOBS"   maxlength="300" size="120"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">E-mail: </td>
+        <td><input type="text" readonly id="txtEMAIL" tabindex="7"  value="vEMAIL"   maxlength="100" size="120"></td>
+			</tr>
+		</table></td></tr>
+
+		<tr ><td><table>
+		  <td width="85px">Tipo:&nbsp;</td>
+
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(1);">
+        <input type="radio" id="radTIPO" name="radTIPO" value="1" checkedTIPO1 >Ligação&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(2);">
+        <input type="radio" id="radTIPO" name="radTIPO" value="2" checkedTIPO2>Atendimento presencial&nbsp;&nbsp;
+      </td>
+		</table></td></tr>
+
+
+
+    <tr><td><table>
+      <td width="85px">Data: </td><td><input  type="text" readonly id="txtDATA" tabindex="8"  value="vDATA" maxlength="8" size="10"
+        onKeyPress="return sistema_formatar(event, this, '00/00/00');"  ></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Registrado por: </td><td><span class="lblPADRAO_VLR_CMP">vOPERADOR</td>
+			</tr>
+		</table></td></tr>
+
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+ <input type=hidden id="hidREPRESENTANTE" value="@idREPRESENTANTE">
+ <input type=hidden id="hidSO_LEITURA" value="@SO_LEITURA">
+    
+</table>
+</td></tr></table>

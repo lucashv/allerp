@@ -1,0 +1,159 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>
+
+  	<td id="btnALTERNAR" title="CTRL+TAB= Alternar entrega proposta/operação normal" align="center" onmouseout="this.style.backgroundColor='#F6F7F7'" 
+  	onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="alternarINCLUSAO();" >
+  	  <img src="images/alternar2.png" />
+  	</td>
+
+  	<td id="btnVERIFICADA" title="Registrar como verificada" align="center" onmouseout="this.style.backgroundColor='#F6F7F7'" 
+  	onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="verificada();" >
+  	  <img src="images/baixar.png" />
+  	</td>
+
+        
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table>
+      <td>Operador(a) responsável: </td><td width="205px"><span class="lblPADRAO_VLR_CMP">vOPERADOR</td>
+      <td width="100px">&nbsp;</td>
+      <td @estiloOPERADOR_EXCLUIU id=opEXCLUIU>@titOPERADOR_EXCLUIU</td>
+      <td @estiloOPERADOR_EXCLUIU><span class="lblPADRAO_VLR_CMP">@nomeOPERADOR_EXCLUIU</td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+        <td width="120px" >Data: </td>
+        <td><input type="text" id="txtDATA" tabindex="1"  value="vDATA" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+          <input type=hidden id=txtDATA_SEG value="vDATA" /></td>
+			</tr>
+		</table></td></tr>
+		
+		<tr><td><table>  					
+			<tr>
+    		<td width="120px" >Conta:</td>					
+				<td onmouseover="this.style.cursor='pointer';" title="Escolher conta (ou pressione F8)" 
+          onclick="AuxilioF7('txtCONTA')";><image src="images/setaBAIXO.gif"></td>
+				<td><input type="text" id="txtCONTA" tabindex="2"  value="vCONTA" 
+          maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');" /></td>
+				<td width="450px"><span class="lblPADRAO_VLR_CMP" id="lblCONTA">vdescCONTA</td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+    		<td width="120px" id=tdENVOLVIDO>Funcionário/corretor:</td>					
+				<td onmouseover="this.style.cursor='pointer';" title="Escolher funcionário (ou pressione F8)" 
+          onclick="AuxilioF7('txtFUNCIONARIO')";><image src="images/setaBAIXO.gif"></td>
+				<td><input type="text" id="txtFUNCIONARIO" tabindex="3"  value="vFUNCIONARIO" 
+          maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');" /></td>
+				<td width="250px"><span class="lblPADRAO_VLR_CMP" id="lblFUNCIONARIO">v_FUNCIONARIO</td>
+			</tr>
+		</table></td></tr>
+
+
+		<tr><td><table>  					
+			<tr height="25px">
+        <td width="120px" >Descrição:</td>
+				<td width="120px"><input type="text" id="txtDESCRICAO" tabindex="4"  value="vDESCRICAO"    maxlength="90" size="95" /></td>
+
+        <td width="10px">&nbsp;</td>
+        <td id=btnCHEQUES ><table><tr>  
+        	<td style="cursor:pointer" align=right title="Buscar cheques recebidos" align="center" onmouseout="this.style.backgroundColor='#F6F7F7'" 
+        	onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="buscaCHEQUES();" >
+        	  <span style="font-size:14px;font-weight:bold;">&nbsp;&nbsp;[ BUSCAR CHEQUES RECEBIDOS ]&nbsp;&nbsp;</span>
+        	</td>
+        </tr></table></td>
+			</tr>
+		
+			<tr style="display:none">
+        <td width="120px" >Valor R$:</td>
+				<td width="330px"><input type="text" id="txtVALOR" tabindex="5"  value="vVALOR" 
+          maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);" /></td>
+			</tr>
+		</table></td></tr>
+
+
+		<tr><td><table width="100%">  					
+      <tr>
+        <td valign="top" height="@altDivPAGAMENTOS" >
+          <div>@titPAGAMENTOS</div>
+          <div id="divTabPAGAMENTOS" style="overflow:auto;min-height:95%;height:95%;overflow:-moz-scrollbars-vertical;color:blue;">@tabPAGAMENTOS</div>
+        </td>
+      </tr>
+		</table></td></tr>
+		
+    <tr><td><table width="100%" >
+      <tr height="10px">
+      <td style="width:90px" id="btnVALE_CREDITO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addVALE_CREDITO();" >
+        <span style="cursor: pointer;" >Alt+1= VALE CRÉDITO</span>
+      </td>
+      <td style="width:90px" id="btnCHEQUE" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addCHEQUE();">
+        <span style="cursor: pointer;" >Alt+2= CHEQUE</span>
+      </td>
+      <td style="width:90px" id="btnBOLETO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addBOLETO();">
+        <span style="cursor: pointer;" >Alt+3= BOLETO</span>
+      </td>
+      <td style="width:90px" id="btnCARTAO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="addCARTAO();" >
+        <span style="cursor: pointer;" >Alt+4= CARTÃO</span>
+      </td>
+      <td style="width:90px" id="btnVALE" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="addVALE();" >
+        <span style="cursor: pointer;" >Alt+5= VALE</span>
+      </td>
+
+      <td style="width:90px" id="btnDINHEIRO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addDINHEIRO();" >
+        <span style="cursor: pointer;" >Alt+6= DINHEIRO</span>
+      </td>
+
+      </tr></table>    
+    </td></tr>
+
+    <tr onclick="preparaVALECREDITO();" onmouseout="this.style.backgroundColor='#FFCCCC'" 
+      onmouseover="this.style.backgroundColor='#FF8080'" id=trVALE style="cursor:pointer;" bgcolor="#FFCCCC"><td  width="100%"><table align=left >
+      <td>&nbsp;Crédito cheque corretor Nº:&nbsp;</td>
+      <td><input type="text" id="txtVALE_CREDITO" tabindex="8"  value="vVALE" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00000000');"  ></td>
+      <td>&nbsp;</td>
+      <td id=okVALE_CREDITO width="30px"></td>
+      <td>Corretor: </td>
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)" 
+        onclick="AuxilioF7('txtREL_REPRESENTANTE2')";><image src="images/setaBAIXO.gif"></td>
+			<td><input type="text" id="txtREL_REPRESENTANTE2" tabindex="9"  value="vCORRETOR_VALE" 
+        maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+			<td width="150px"><span class="lblPADRAO_VLR_CMP" id="lblREL_REPRESENTANTE2">v_CORRETOR_VALE</td>
+      <td>Valor:&nbsp;</td>
+      <td><input type="text" id="txtVALOR_VALE" tabindex="10" value="vVLR_VALE" 
+        maxlength="7" size="12" onkeyPress="return FormatMoney(this.value, event);"></td>
+
+      <td>&nbsp;Desconto %:&nbsp;</td>
+      <td><input type="text" id="txtDESCONTO_VALE" tabindex="11" value="vDESCONTO_VALE" 
+        maxlength="3" size="5" onkeyPress="return sistema_formatar(event, this, '000');"></td>
+
+      <td>&nbsp;Data pagar: </td><td><input type="text" id="txtPAGAR_VALE" tabindex="12"  value="vPAGAR_VALE" maxlength="8" size="10"
+        onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+
+
+      <td></td>
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+ <input type=hidden id="faltaVERIFICAR" value="@faltaVERIFICAR">
+</table>
+</td></tr></table>

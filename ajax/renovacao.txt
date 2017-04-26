@@ -1,0 +1,49 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:70%" style="cursor: move;"><span class=lblTitJanela>Renovaçao</td>
+    <td align="right"><span onclick="fecharRENOVACAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td ><table><tr >
+      <td width="120px">Corretor:</td>
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)" 
+          onclick="AuxilioF7('txtRENOVACAO_CORRETOR')";><image src="images/setaBAIXO.gif"></td>
+      <td><input type="text" id="txtRENOVACAO_CORRETOR" tabindex="1"  value="vRENOVACAO_CORRETOR" maxlength=4 size=4
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td style="padding-left:5px;width:300px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblRENOVACAO_CORRETOR">v_RENOVACAO_CORRETOR</span></td>
+		</tr></table></td></tr>
+
+    <tr><td ><table><tr >
+      <td width="120px">Proteção:</td>
+      <td><input type="text" id="txtPROTECAO" tabindex=2 value="vPROTECAO" maxlength=3 size=5 
+          onKeyPress="return sistema_formatar(event, this, '000');"></td>
+		</tr></table></td></tr>
+
+    <tr><td ><table><tr >
+      <td width="120px">Parcelas:</td>
+      <td><input type="text" id="txtPARCELAS" tabindex=3 value="vPARCELAS" maxlength=2 size=4 
+          onKeyPress="return sistema_formatar(event, this, '00');"></td>
+		</tr></table></td></tr>
+
+    <tr><td ><table><tr >
+      <td width="120px">Valor prêmio:</td>
+      <td><input type="text" id="txtPREMIO" tabindex=4 value="vPREMIO" maxlength=8 size=12 
+          onkeyPress="return FormatMoney(this.value, event);"></td>
+		</tr></table></td></tr>
+
+    <tr><td ><table><tr >
+      <td width="120px">Comissão:</td>
+      <td><input type="text" id="txtCOMISSAO" tabindex=5 value="vCOMISSAO" maxlength=4 size=6 
+          onkeyPress="return FormatMoney(this.value, event);"></td>
+		</tr></table></td></tr>
+
+		
+ </table></td></tr> 
+ <input type=hidden id="idLINHA" value="@idLINHA">
+    
+</table>
+</td></tr></table>

@@ -1,0 +1,44 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:70%" style="cursor: move;"><span class=lblTitJanela>Sinistro</td>
+    <td align="right"><span onclick="fecharSINISTRO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td ><table><tr >
+      <td width="120px">Tipo:</td>
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher tipo do sinistro (ou pressione F8)" 
+          onclick="AuxilioF7('txtTIPOSEGURO')";><image src="images/setaBAIXO.gif"></td>
+      <td><input type="text" id="txtTIPOSINISTRO" tabindex="1"  value="vTIPOSINISTRO" maxlength=4 size=4
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td style="padding-left:5px;width:300px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblTIPOSINISTRO">v_TIPOSINISTRO</span></td>
+		</tr></table></td></tr>
+
+    <tr><td ><table><tr >
+      <td width="120px">Data do sinistro:</td>
+      <td><input type="text" id="txtDATASINISTRO" tabindex=2 value="vDATASINISTRO" maxlength=8 size="12" 
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"></td>
+		</tr></table></td></tr>
+
+    <tr><td ><table><tr >
+      <td width="120px">Data da liberação:</td>
+      <td><input type="text" id="txtDATALIBERACAO" tabindex=3 value="vDATALIBERACAO" maxlength="8" size="12" 
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"></td>
+		</tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td width="120px">Terceiros:</td>
+      <td><input type=text id=txtTERCEIROS tabindex=4  value="vTERCEIROS" maxlength=60 size=70></td>
+			</tr>
+		</table></td></tr>
+
+		
+		
+ </table></td></tr> 
+ <input type=hidden id="idLINHA" value="@idLINHA">
+    
+</table>
+</td></tr></table>

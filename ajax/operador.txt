@@ -1,0 +1,573 @@
+<table bgcolor="white" cellspacing="5" width="100%" ><tr><td>
+
+<table class="frmJANELA" border=1 width="100%" cellpadding=03  >
+
+  <tr><td><table width="100%" > 
+
+    <tr>
+
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+
+    <td id=btnGRAVAR align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+
+    </td>    
+
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+
+  </td</tr>					
+
+
+
+  <tr><td><table width="100%" cellspacing=0 cellpadding=0>  
+
+
+
+    <tr><td><table>
+
+      <td>Nome: </td><td><input type=text id="txtNOME" tabindex="1" readonly value="vNOME" maxlength="35" size="50"></td>
+
+			</tr>
+
+		</table></td></tr>
+
+
+
+    <tr><td><table>
+
+      <tr width="100%"><td width="47%"><hr></td><td>Permissões</td><td width="47%"><hr></td></tr>
+
+		</table></td></tr>
+
+
+
+    <tr><td ><table width="100%" cellspacing=0 cellpadding=0><tr>
+
+
+
+    <tr valign=top><td width="50%" ><table valign=top>
+
+
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(0);">  					
+
+    			<tr> 
+
+            <td onclick="checar(0);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=A checkedA /></td>
+
+            <td>Controla operadoras</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+  
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(1);">  					
+
+    			<tr> 
+
+            <td onclick="checar(1);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=B checkedB /></td>
+
+            <td>Controla tipos de contratos</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+  
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(2);">  					
+
+    			<tr> 
+
+            <td onclick="checar(2);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=C checkedC /></td>
+
+            <td>Controla grupos de vendas</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+  
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(3);">  					
+
+    			<tr> 
+
+            <td onclick="checar(3);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=D checkedD /></td>
+
+            <td>Controla corretores</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+  
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(4);">  					
+
+    			<tr> 
+
+            <td onclick="checar(4);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=E checkedE /></td>
+
+            <td>Controla comissões sobre mensalidades</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+  
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(5);">  					
+
+    			<tr> 
+
+            <td onclick="checar(5);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=H checkedH /></td>
+
+            <td>Controla caixa geral e caixa interno (todos escritórios), plano de contas</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+
+
+    <tr><td><table cellspacing=0 cellpadding=0>
+
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(6);">  					
+
+  			<tr> 
+
+          <td onclick="checar(6);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=R checkedR /></td>
+
+          <td>Processa arquivos de confirmação (baixa de mensalidades)</td>
+
+        </tr>
+
+    	</table></td></tr>
+
+		</table></td></tr>
+
+
+
+    <tr><td><table cellspacing=0 cellpadding=0>
+
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(7);">  					
+
+  			<tr> 
+
+          <td onclick="checar(7);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=S checkedS /></td>
+
+          <td>Acessa TODAS as ligações, indicações/acompanhamento, atendimento presencial e configura suas origens, produtos e define plantão</td>
+
+        </tr>
+
+    	</table></td></tr>
+
+		</table></td></tr>
+
+    
+
+    <tr><td><table cellspacing=0 cellpadding=0>
+
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(8);">  					
+
+  			<tr> 
+
+          <td onclick="checar(8);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=V checkedV /></td>
+
+          <td>Digitaliza propostas</td>
+
+        </tr>
+
+    	</table></td></tr>
+
+		</table></td></tr>
+
+
+
+
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+    </table></td>
+
+
+
+    <td width="50%"><table cellspacing=0 cellpadding=0>
+
+
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(9);">  					
+
+    			<tr> 
+
+            <td onclick="checar(9);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=J checkedJ /></td>
+
+            <td>Digita propostas</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+      
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(10);">  					
+
+    			<tr> 
+
+            <td onclick="checar(10);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=U checkedU /></td>
+
+            <td>Vê propostas sem poder alterar</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+      
+
+
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(11);">  					
+
+    			<tr> 
+
+            <td onclick="checar(11);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=K checkedK /></td>
+
+            <td>Controla operadores do sistema</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(12);">  					
+
+    			<tr> 
+
+            <td onclick="checar(12);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=L checkedL /></td>
+
+            <td>Controla bancos</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(13);">  					
+
+    			<tr> 
+
+            <td onclick="checar(13);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=M checkedM /></td>
+
+            <td>Registra pagamento de boleto</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(14);">  					
+
+    			<tr> 
+
+            <td onclick="checar(14);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=N checkedN /></td>
+
+            <td>Assiste vídeo aulas</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+
+
+      <tr><td><table cellspacing=0 cellpadding=0>
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(15);">  					
+
+    			<tr> 
+
+            <td onclick="checar(15);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=G checkedG /></td>
+
+            <td>Controla créditos e descontos</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+  		</table></td></tr>
+
+
+
+    <tr><td><table cellspacing=0 cellpadding=0>
+
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(16);">  					
+
+  			<tr> 
+
+          <td onclick="checar(16);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=P checkedP /></td>
+
+          <td>Controla comissões sobre adesão</td>
+
+        </tr>
+
+    	</table></td></tr>
+
+		</table></td></tr>
+
+
+
+    <tr><td><table cellspacing=0 cellpadding=0>
+
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(17);">  					
+
+  			<tr> 
+
+          <td onclick="checar(17);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=Q checkedQ /></td>
+
+          <td>Emite relatórios</td>
+
+        </tr>
+
+    	</table></td></tr>
+
+		</table></td></tr>
+
+
+
+    <tr><td><table cellspacing=0 cellpadding=0>
+
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(18);">  					
+
+  			<tr> 
+
+          <td onclick="checar(18);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=T checkedT /></td>
+
+          <td>Acessa SOMENTE as indicações/acompanhamento (pré venda) do(s) corretor(es) pelo qual é responsável</td>
+
+        </tr>
+
+    	</table></td></tr>
+
+		</table></td></tr>
+
+
+
+    <tr>
+      <td>
+        <table cellspacing=0 cellpadding=0>
+
+  		    <tr>
+            <td >
+              <table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(19);">
+                <tr>
+                  <td onclick="checar(19);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=X checkedX /></td>
+                  <td>Acessa corretora de seguros</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+		    </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <table cellspacing=0 cellpadding=0>
+          <tr>
+            <td >
+              <table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';" onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="checar(20);">
+                <tr>
+                  <td onclick="checar(20);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=Z checkedZ /></td>
+                  <td>Troca comissões</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+
+    </table></td></tr>
+
+    </table></td></tr>
+
+
+
+    <tr bgcolor="#FFCCCC"><td><table width="100%">
+
+      <tr ><td><table cellspacing=0 cellpadding=0>
+
+    		<tr ><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"   
+
+          onmouseout="this.style.backgroundColor='#FFCCCC';" onclick="checar(21);" style="padding-left:5px">  					
+
+    			<tr> 
+
+            <td onclick="checar(21);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=I checkedI /></td>
+
+            <td>Registra caixa interno/entrega propostas do(s) escritório(s):</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+
+
+        <tr><td><table cellspacing=0 cellpadding=0>
+
+      		<tr><td style="padding-left:10px">@escritorios</td></tr>  
+
+    		</table></td></tr>
+
+
+
+    		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"   
+
+          onmouseout="this.style.backgroundColor='#FFCCCC';" onclick="checar(22);" style="padding-left:5px">  					
+
+    			<tr> 
+
+            <td onclick="checar(22);"><input type="checkbox" id="chkPERMISSAO" name="chkPERMISSAO" value=O checkedO /></td>
+
+            <td>Operações do caixa deste usuário não precisam de conferência / Confere caixa interno de outros usuários</td>
+
+          </tr>
+
+      	</table></td></tr>
+
+
+
+  		</table></td></tr>
+
+    </table></td></tr>
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
+
+ </table></td></tr> 
+
+ <input type=hidden id="numREG" value="@numREG">
+
+    
+
+</table>
+
+</td></tr></table>

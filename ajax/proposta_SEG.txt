@@ -1,0 +1,631 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding="3"  >
+
+  <tr><td><table width="100%" >
+  
+    <tr><td><table>
+			<tr>
+        <td width="100px" colspan="2">Proposta</td>
+        <td>Sequência&nbsp;&nbsp;</td>        
+        <td width="100px">Assinatura</td>
+        <td colspan="2">Tabela usada</td>
+        
+        <td rowspan="2" width="96px" align="right" id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+        onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+        <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+        </td>
+        <td rowspan="2" width="10px">&nbsp;</td>            
+        <td rowspan="2" align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td>
+			</tr>
+			<tr>
+        <td><input type="text" id="txtNUMPROPOSTA" tabindex="1"  value="vPROPOSTA" 
+          maxlength="7" size="9" onKeyPress="return sistema_formatar(event, this, '0000000');"></td>
+        <td align="left" width="30px" id="okPROPOSTA" style="color:red">&nbsp;</td>
+        
+        <td ><span id="lblSEQUENCIA" style="font-size:9px;color:blue;font-weight:normal;">@sequencia</span></td>
+        <td><input type="text" id="txtASSINATURA" tabindex="2" value="vASSINATURA" maxlength="10" size="12" 
+          onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>      
+    
+ 				<td onmouseover="this.style.cursor='pointer';" title="Escolher tabela " 
+           onclick="AuxilioF7('lblTabUsada')";><image src="images/setaBAIXO.gif"></td>                        
+
+        <td width="280px" ><span id="lblTabUsada" style="font-size:9px;color:blue;font-weight:normal;">@infoTABELA</span></td>    
+        <input type="hidden" id="hidTabUsada" value="@tabUsada" />
+
+			</tr>
+		</table></td></tr>
+   
+  </td></tr></table>					
+
+
+  <tr><td><table width="100%" style="color:grey;">  
+
+    <tr><td><table>
+			<tr>
+        <td width="230px">Contratante</td>
+        <td width="100px">Data nascimento</td>
+        <td>Sexo</td>			
+        <td>Endereço</td>              
+        <td>CPF</td>
+        <td colspan="3">Bairro</td>        
+			</tr>
+			<tr>
+        <td><input type="text" id="txtCONTRATANTE" tabindex="3"  value="vCONTRATANTE" maxlength="45" size="40"></td>
+        <td><input type="text" id="txtNASCCONTRATANTE" tabindex="4" value="vNASCCONTRATANTE" maxlength="10" size="12" 
+            onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+        <td><input type="text" id="txtSEXOC" tabindex="5"  value="vSEXOC" maxlength="1" size="2"></td>
+        <td><input type="text" id="txtENDERECO" tabindex="7"  value="vENDERECO" maxlength="70" size="30"></td>        
+        <td><input type="text" id="txtCPF" tabindex="8"  value="vCPF" maxlength="14" size="18"
+            onKeyPress="return sistema_formatar(event, this, '000.000.000-00');"></td>        
+
+				<td onmouseover="this.style.cursor='pointer';" title="Escolher bairro (ou pressione F8)" 
+          onclick="AuxilioF7('txtBAIRRO')";><image src="images/setaBAIXO.gif"></td>                        
+        <td><input type="text" id="txtBAIRRO" tabindex="98"  value="vBAIRRO" maxlength="4" size="4"></td>
+        <td style="padding-left:5px;WIDTH:230px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblBAIRRO">v_BAIRRO</span></td>
+			</tr>
+		</table></td></tr>
+    
+		
+		<tr><td><table>  					
+      <tr>
+        <td colspan="3">Município </td>
+        <td colspan="3">UF</td>
+        <td>CEP</td>
+        <td>Fone Res.</td>
+        <td>Fone Com.</td>
+        <td>Celular</td>
+        <td>E-mail</td>
+			</tr>
+			<tr>
+				<td onmouseover="this.style.cursor='pointer';" title="Escolher município (ou pressione F8)" 
+          onclick="AuxilioF7('txtMUNICIPIO')";><image src="images/setaBAIXO.gif"></td>                        
+        <td><input type="text" id="txtMUNICIPIO" tabindex="99"  value="vMUNICIPIO" maxlength="4" size="4"></td>
+        <td style="padding-left:5px;WIDTH:230px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblMUNICIPIO">v_MUNICIPIO</span></td>
+			
+				<td onmouseover="this.style.cursor='pointer';" title="Escolher UF (ou pressione F8)" 
+          onclick="AuxilioF7('txtUF')";><image src="images/setaBAIXO.gif"></td>                        
+        <td><input type="text" id="txtUF" tabindex="100"  value="vUF" maxlength="4" size="4"></td>
+        <td style="padding-left:5px;WIDTH:50px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblUF">v_UF</span></td>
+
+        <td><input type="text" id="txtCEP" tabindex="6"  value="vCEP" maxlength="9" size="11"
+            onKeyPress="return sistema_formatar(event, this, '00000-000');"></td>
+        <td><input type="text" id="txtFONERES" tabindex="9"  value="vFONERES" maxlength="20" size="18"></td>
+        <td><input type="text" id="txtFONECOM" tabindex="10"  value="vFONECOM" maxlength="15" size="13"></td>
+        <td><input type="text" id="txtCELULAR" tabindex="11"  value="vCELULAR" maxlength="15" size="13"></td>
+        <td><input type="text" id="txtEMAIL" tabindex="12"  value="vEMAIL" maxlength="30" size="28"></td>
+			</tr>
+		</table></td></tr>
+		
+    <tr><td><table>
+      <tr>
+      <td>Dia vencimento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>Débito automático&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>      
+      <td>Qtde usuários&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>      
+      <td>Remoção pertence ao:</td>            
+      </tr>
+
+      <tr>            
+      <td><input type="text" id="txtVENCTO" tabindex="13"  value="vVENCTO" maxlength="2" size="2"
+            onKeyPress="return sistema_formatar(event, this, '00');">&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><input type="checkbox" id="debito" name="debito" @debito value="sim" /></td>
+      <td><input type="text" id="txtUSUARIOS" tabindex="14"  value="vQTDEUSUARIOS" maxlength="2" size="2"
+            onKeyPress="return sistema_formatar(event, this, '00');"></td>
+
+      <td><table><tr>
+          <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+            onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona(1);">
+            <input type="radio" id="pertence" name="pertence" value="1" @remocao1 >Representante&nbsp;&nbsp;
+          </td>
+          <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona(2);">
+            <input type="radio" id="pertence" name="pertence" value="2" @remocao2 >Teleatendente
+          </td>
+      </tr></table></td>                      
+                  
+      </tr>         
+    </table></td></tr>
+		
+
+		<tr><td>
+      <div 
+  style="background-color:#DDDDEE;overflow:auto;min-height:@altDivUSUARIOS;height:@altDivUSUARIOS;overflow:-moz-scrollbars-vertical;color:grey;">
+
+        <table width="100%">
+
+    		<tr><td><table>   					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">T</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME1" tabindex="15"  value="vNOME1" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC1" tabindex="16"  value="vNASC1" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE1">vIDADE1</span></td>                
+            <td><input type="text" id="txtSEXO1" tabindex="17"  value="vSEXO1" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>            
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO1')";><image src="images/setaBAIXO.gif"></td>                        
+            <td><input type="text" id="txtPARENTESCO1" tabindex="18"  value="vPARENTESCO1" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO1">v_PARENTESCO1</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO1')";><image src="images/setaBAIXO.gif"></td>                        
+            <td><input type="text" id="txtPLANO1" tabindex="19"  value="vPLANO1" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO1">v_PLANO1</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS1">vMENS1</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO1" tabindex="20"  style="text-align:right" value="vREMOCAO1" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>         
+            </table>   
+    			</td></tr>    			
+    		</table></td></tr>
+    		
+    		
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D1</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME2" tabindex="21"  value="vNOME2" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC2" tabindex="22"  value="vNASC2" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE2">vIDADE2</span></td>                
+            <td><input type="text" id="txtSEXO2" tabindex="23"  value="vSEXO2" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO2')";><image src="images/setaBAIXO.gif"></td>                      
+            <td><input type="text" id="txtPARENTESCO2" tabindex="24"  value="vPARENTESCO2" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO2">v_PARENTESCO2</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO2')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO2" tabindex="25"  value="vPLANO2" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO2">v_PLANO2</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS2">vMENS2</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO2" tabindex="26"  value="vREMOCAO2" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D2</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME3" tabindex="27"  value="vNOME3" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC3" tabindex="28"  value="vNASC3" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE3">vIDADE3</span></td>                
+            <td><input type="text" id="txtSEXO3" tabindex="29"  value="vSEXO3" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO3')";><image src="images/setaBAIXO.gif"></td>                       
+            <td><input type="text" id="txtPARENTESCO3" tabindex="30"  value="vPARENTESCO3" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO3">v_PARENTESCO3</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO3')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO3" tabindex="31"  value="vPLANO3" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO3">v_PLANO3</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS3">vMENS3</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO3" tabindex="32"  value="vREMOCAO3" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+    		
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D3</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME4" tabindex="33"  value="vNOME4" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC4" tabindex="34"  value="vNASC4" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE4">vIDADE4</span></td>                
+            <td><input type="text" id="txtSEXO4" tabindex="35"  value="vSEXO4" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO4')";><image src="images/setaBAIXO.gif"></td>                       
+            <td><input type="text" id="txtPARENTESCO4" tabindex="36"  value="vPARENTESCO4" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO4">v_PARENTESCO4</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO4')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO4" tabindex="37"  value="vPLANO4" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO4">v_PLANO4</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS4">vMENS4</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO4" tabindex="38"  value="vREMOCAO4" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+    		
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D4</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME5" tabindex="39"  value="vNOME5" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC5" tabindex="40"  value="vNASC5" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE5">vIDADE4</span></td>                
+            <td><input type="text" id="txtSEXO5" tabindex="41"  value="vSEXO5" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO5')";><image src="images/setaBAIXO.gif"></td>                        
+            <td><input type="text" id="txtPARENTESCO5" tabindex="42"  value="vPARENTESCO5" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO5">v_PARENTESCO5</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO5')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO5" tabindex="43"  value="vPLANO5" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO5">v_PLANO5</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS5">vMENS5</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO5" tabindex="44"  value="vREMOCAO5" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+
+
+
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D5</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME6" tabindex="45"  value="vNOME6" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC6" tabindex="46"  value="vNASC6" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE6">vIDADE6</span></td>                
+            <td><input type="text" id="txtSEXO6" tabindex="47"  value="vSEXO6" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO6')";><image src="images/setaBAIXO.gif"></td>                        
+            <td><input type="text" id="txtPARENTESCO6" tabindex="48"  value="vPARENTESCO6" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO6">v_PARENTESCO6</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO6')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO6" tabindex="49"  value="vPLANO6" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO6">v_PLANO6</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS6">vMENS6</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO6" tabindex="50"  value="vREMOCAO6" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+    		
+
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D6</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME7" tabindex="51"  value="vNOME7" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC7" tabindex="52"  value="vNASC7" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE7">vIDADE7</span></td>                
+            <td><input type="text" id="txtSEXO7" tabindex="53"  value="vSEXO7" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO7')";><image src="images/setaBAIXO.gif"></td>                        
+            <td><input type="text" id="txtPARENTESCO7" tabindex="54"  value="vPARENTESCO7" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO7">v_PARENTESCO7</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO7')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO7" tabindex="55"  value="vPLANO7" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO7">v_PLANO7</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS7">vMENS7</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO7" tabindex="56"  value="vREMOCAO7" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+    		
+
+
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D7</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME8" tabindex="57"  value="vNOME8" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC8" tabindex="58"  value="vNASC8" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE8">vIDADE8</span></td>                
+            <td><input type="text" id="txtSEXO8" tabindex="59"  value="vSEXO8" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO8')";><image src="images/setaBAIXO.gif"></td>                        
+            <td><input type="text" id="txtPARENTESCO8" tabindex="60"  value="vPARENTESCO8" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO8">v_PARENTESCO8</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO8')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO8" tabindex="61"  value="vPLANO8" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO8">v_PLANO8</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS8">vMENS8</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO8" tabindex="62"  value="vREMOCAO8" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+    		
+
+
+    		<tr><td><table>  					
+          <tr>
+            <td rowspan="4" width="40px"><font size="+1">D8</font></td>
+            <td>Nome</td>
+            <td>Data nascimento</td>
+            <td>Idade</td>
+            <td>Sexo</td>
+    			</tr>
+    			<tr>            
+            <td width="280px"><input type="text" id="txtNOME9" tabindex="63"  value="vNOME9" maxlength="35" size="50"></td>
+            <td width="100px"><input type="text" id="txtNASC9" tabindex="64"  value="vNASC9" maxlength="10" size="12" 
+                onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+            <td width="100px"><span class="lblPADRAO_VLR_CMP" id="lblIDADE9">vIDADE9</span></td>                
+            <td><input type="text" id="txtSEXO9" tabindex="65"  value="vSEXO9" maxlength="1" size="2"></td>
+    			</tr>
+          <tr><td colspan="5">
+            <table cellspacing="0"  border=0>
+            <tr>
+            <td colspan="4" align="left">Parentesco</td>
+            <td colspan="4" align="left">Plano</td>
+            <td>1ª mensalidade</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>Remoção</td>
+            </tr>
+
+            <tr>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher parentesco (ou pressione F8)" 
+              onclick="AuxilioF7('txtPARENTESCO9')";><image src="images/setaBAIXO.gif"></td>                        
+            <td><input type="text" id="txtPARENTESCO9" tabindex="66"  value="vPARENTESCO9" maxlength="2" size="2"
+                  onKeyPress="return sistema_formatar(event, this, '00');"></td>
+            <td style="padding-left:5px;WIDTH:120px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPARENTESCO9">v_PARENTESCO9</span></td>
+            <td width="30px">&nbsp;</td>
+    				<td onmouseover="this.style.cursor='pointer';" title="Escolher plano (ou pressione F8)" 
+              onclick="AuxilioF7('txtPLANO9')";><image src="images/setaBAIXO.gif"></td>                            
+            <td><input type="text" id="txtPLANO9" tabindex="67"  value="vPLANO9" maxlength="4" size="4"></td>
+            <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblPLANO9">v_PLANO9</span></td>
+            <td width="30px">&nbsp;</td>            
+            <td align="right"><span class="lblPADRAO_VLR_CMP" id="lblMENS9">vMENS9</span></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><input type="text" id="txtREMOCAO9" tabindex="68"  value="vREMOCAO9" style="text-align:right" 
+              maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>            
+            </tr>
+            </table>            
+    			</td></tr>    			
+    		</table></td></tr>
+    		
+    		
+    		
+        </table>
+      </div>  		
+		</td></tr>
+		
+    <tr><td><table>
+      <tr>
+      <td colspan="4">Representante</td>
+      <td colspan="4">Tele</td>      
+      <td colspan="4">Mídia</td>
+      <td>Assinatura</td>      
+      <td>Adesão</td>
+      <td>1ª mens</td>
+      </tr>
+
+      <tr>            
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher representante (ou pressione F8)" 
+          onclick="AuxilioF7('txtREPRESENTANTE')";><image src="images/setaBAIXO.gif"></td>
+      <td><input type="text" id="txtREPRESENTANTE" tabindex="69"  value="vREPRESENTANTE" maxlength="4" size="4"
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td style="padding-left:5px;WIDTH:190px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblREPRESENTANTE">v_REPRESENTANTE</span></td>
+
+      <td width="30px">&nbsp;</td>
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher teleatendente (ou pressione F8)" 
+          onclick="AuxilioF7('txtTELE')";><image src="images/setaBAIXO.gif"></td>
+      <td><input type="text" id="txtTELE" tabindex="70"  value="vTELE" maxlength="4" size="4"
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td style="padding-left:5px;WIDTH:40px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblTELE">v_TELE</span></td>
+      
+      <td width="30px">&nbsp;</td>                
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher mídia (ou pressione F8)" 
+         onclick="AuxilioF7('txtMIDIA')";><image src="images/setaBAIXO.gif"></td>
+      <td><input type="text" id="txtMIDIA" tabindex="71"  value="vMIDIA" maxlength="4" size="4"
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td style="padding-left:5px;WIDTH:130px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblMIDIA">v_MIDIA</span></td>
+      <td width="30px">&nbsp;</td> 
+
+      <td><span id="lblASSINATURA" class="lblPADRAO_VLR_CMP">vASSINATURA</span></td>
+      <td><input type="text" id="txtADESAO" tabindex="72"  value="vADESAO" style="text-align:right" 
+        maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+      <td><input type="text" id="txtMENS" tabindex="73"  value="vMENSALIDADE"  style="text-align:right"
+        maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+      </tr>         
+    </table></td></tr>
+		
+		
+		<tr><td><table width="100%">
+      <tr width="100%"><td width="47%"><hr></td><td>Observações</td><td width="47%"><hr></td></tr>
+    </table></td></tr>
+		
+		<tr><td><table cellpadding="0" cellspacing="0">
+      <tr><td>
+        <textarea onclick="javascript:cfoco='txtOBS';" id="txtOBS" rows="1" cols="140" 
+           style="color:blue;font-family:verdana;font-size:10px;" >&nbsp;</textarea>
+      </td></tr> 
+    </table></td></tr>
+    
+		<tr><td><table cellpadding="0" cellspacing="0">
+      <tr><td>
+        @infoCADASTRO
+      </td></tr> 
+    </table></td></tr>
+    
+
+		
+		
+ </table></td></tr> 
+
+ <input type="hidden" id="numREG" value="@numREG">
+ <input type="hidden" id="dataCADASTRO" value="@dataCADASTRO"> 
+    
+</table>
+</td></tr></table>

@@ -1,0 +1,227 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>
+
+  	<td id="btnVERIFICADA" title="Registrar como verificada" align="center" onmouseout="this.style.backgroundColor='#F6F7F7'" 
+  	onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="verificada();" >
+  	  <img src="images/baixar.png" />
+  	</td>
+
+        
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table>
+      <td>Operador(a) responsável: </td><td width="205px"><span class="lblPADRAO_VLR_CMP">vOPERADOR</td>
+      <td >Data: </td><td><input type="text" id="txtDATA" tabindex="1"  value="vDATA" maxlength="8" size="10"
+        onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+        <input type=hidden id=txtDATA_SEG value="vDATA" />
+      </td>
+      <td width="100px">&nbsp;</td>
+      <td @estiloOPERADOR_EXCLUIU id=opEXCLUIU>@titOPERADOR_EXCLUIU</td>
+      <td @estiloOPERADOR_EXCLUIU><span class="lblPADRAO_VLR_CMP">@nomeOPERADOR_EXCLUIU</td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Local atual:</td> 
+      <td width="300px"><span class="lblPADRAO_VLR_CMP">@local</span></td>
+      <td>Local original:</td> 
+      <td><span class="lblPADRAO_VLR_CMP">@localORIGINAL</span></td>
+		</tr></table></td></tr>
+
+		
+		<tr><td><table width="100%">  					
+      <tr>
+        <td valign="top" height="@altDivPROPOSTAS" >
+          <div>@titPROPOSTAS</div>
+          <div id="divTabPROPOSTAS" style="overflow:auto;min-height:95%;height:95%;overflow:-moz-scrollbars-vertical;color:blue;">@tabPROPOSTAS</div>
+        </td>
+      </tr>
+		</table></td></tr>
+		
+    <tr><td><table>  					
+			<tr>
+        <td><table><tr>        
+          <td width="140px" style="color:blue;">SOMA DAS PROPOSTAS:</td>
+          <td width="10px"><span style="color:red;display:none;" id=lblTOTAL>&nbsp;</td>
+          <td width="10px" align=right><span style="font-size:10px;color:red;" id=lblTOTAL_DEVE></td>       
+  
+          <td width="110px" style="padding-left:40px;color:blue;">TOTAL PAGO:</td>
+          <td width="10px" align=right><span style="color:red;" id=lblJUSTIFICADO>&nbsp;</td>        
+  
+          <td width="60px" style="padding-left:40px;color:blue;">FALTANDO:</td>
+          <td width="100px" align=right><span style="color:red;" id=lblFALTANDO>&nbsp;</td>
+          <td width="60px" >&nbsp;</td>
+        </tr></table></td>        
+
+        <td><table cellpadding=0 cellspacing=0><tr bgcolor='#FFCCCC'>
+          <td width="30px">&nbsp;</td>
+          <td width="70px" align=right><span style="color:red;" id=lblVLR_PROP></td>
+          <td width="50px">&nbsp;</td>        
+          <td width="70px" align=right><span style="color:red;" id=lblVLR_ADESAO></td>
+          <td width="50px">&nbsp;</td>
+        </tr></table></td>        
+      </tr>      
+    </table></td></tr>
+    
+<!--
+    <tr><td><table>  					
+			<tr>
+        <td style="padding-left:600px;color:blue;">------------------------------------------------------------</td>
+      </tr>      
+    </table></td></tr>
+-->    
+    
+      
+    <tr><td><table>  					
+			<tr>
+        <td colspan=3>Corretor:</td>
+        <td colspan=3>Tipo contrato:</td>
+        <td id=tdCPF>CPF</td>        
+        <td>&nbsp;&nbsp;</td>
+        <td>Valor:</td>
+        <td>&nbsp;&nbsp;</td>
+        <td>Valor recebido:</td>
+        <td>&nbsp;&nbsp;</td>        
+        <td>Adesão:</td>        
+			</tr>
+    
+			<tr>
+				<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)" 
+          onclick="AuxilioF7('txtREPRESENTANTE')";><image src="images/setaBAIXO.gif"></td>
+				<td><input type="text" id="txtREPRESENTANTE" tabindex="2"  value="" 
+          maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+				<td width="130px"><span class="lblPADRAO_VLR_CMP" id="lblREPRESENTANTE"></td>
+
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher tipo de contrato (ou pressione F8)" 
+            onclick="AuxilioF7('txtTIPO_CONTRATO')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" id="txtTIPO_CONTRATO" tabindex="3"  value="" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td> 
+        <td style="padding-left:5px;WIDTH:150px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblTIPO_CONTRATO"></span></td>
+        
+        <td><input type=text id="txtCPF" tabindex="4" readonly value=""  size="30"></td>
+        <td></td>
+        
+        <td><input type="text" id="txtVALOR" tabindex="5" value="" 
+          maxlength="9" size="12" onkeyPress="return FormatMoney(this.value, event);"></td>
+        <td></td>   
+        
+        <td><input type="text" id="txtRECEBIDO" tabindex="6" value="" 
+          maxlength="9" size="12" onkeyPress="return FormatMoney(this.value, event);"></td>
+          
+        <td></td> 
+          
+        <td><input type="text" id="txtADESAO" tabindex="7" value="" 
+          maxlength="9" size="12" onkeyPress="return FormatMoney(this.value, event);"></td>
+    	</tr>
+		</table></td></tr>
+		
+		<tr><td><table width="100%">  					
+      <tr>
+        <td valign="top" height="@altDivPAGAMENTOS" >
+          <div>@titPAGAMENTOS</div>
+          <div id="divTabPAGAMENTOS" style="overflow:auto;min-height:95%;height:95%;overflow:-moz-scrollbars-vertical;color:blue;">@tabPAGAMENTOS</div>
+        </td>
+      </tr>
+		</table></td></tr>
+
+    <tr><td><table width="100%" >
+      <tr height="10px">
+      <td id=btnVALECREDITO style="width:90px" id="btnVALE_CREDITO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addPGTO_VALE_CREDITO();" >
+        <span style="cursor: pointer;" >Alt+1= VALE CRÉDITO</span>
+      </td>
+      <td style="width:90px" id="btnCHEQUE" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addPGTO_CHEQUE();">
+        <span style="cursor: pointer;" >Alt+2= CHEQUE</span>
+      </td>
+      <td id=btnBOLETO style="width:90px" id="btnBOLETO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addPGTO_BOLETO();">
+        <span style="cursor: pointer;" >Alt+3= BOLETO</span>
+      </td>
+      <td id=btnCARTAO style="width:90px" id="btnCARTAO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="addPGTO_CARTAO();" >
+        <span style="cursor: pointer;" >Alt+4= CARTÃO</span>
+      </td>
+      <td style="width:90px" id="btnVALE" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="addPGTO_VALE();" >
+        <span style="cursor: pointer;" >Alt+5= VALE</span>
+      </td>
+
+      <td style="width:90px" id="btnDINHEIRO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addPGTO_DINHEIRO();" >
+        <span style="cursor: pointer;" >Alt+6= DINHEIRO</span>
+      </td>
+      
+      <td style="width:90px" id="btnDINHEIRO" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+      onmouseover="this.style.backgroundColor='#A9B2CA'"  onclick="addPGTO_INTERNET();" >
+        <span style="cursor: pointer;" >Alt+7= INTERNET</span>
+      </td>
+      
+
+      </tr></table>    
+    </td></tr>
+
+		<tr><td><table width="100%">  					
+      <tr>
+        <td valign="top" height="@altDivVALES" >
+          <div>@titVALES</div>
+          <div id="divTabVALES" style="overflow:auto;min-height:95%;height:95%;overflow:-moz-scrollbars-vertical;color:blue;">@tabVALES</div>
+        </td>
+      </tr>
+		</table></td></tr>
+
+    <tr><td width="100%"><table><tr>
+      <td>Tipo:&nbsp;(<font color=blue>C</font>= Crédito/<font color=blue>D</font>= Débito)&nbsp;</td>
+      <td><input type="text" id="txtTIPO_VALE" tabindex="8"  value="" maxlength=1 size=3 ></td>
+
+      <td>&nbsp;&nbsp;</td>
+
+      <td>&nbsp;Nº:&nbsp;</td>
+      <td><input type="text" id="txtVALE_CREDITO" tabindex="9"  value="" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00000000');"  ></td>
+      <td>&nbsp;</td>
+      <td id=okVALE_CREDITO width="30px"></td>
+      <td>Corretor: </td>
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)" 
+        onclick="AuxilioF7('txtREL_REPRESENTANTE2')";><image src="images/setaBAIXO.gif"></td>
+			<td><input type="text" id="txtREL_REPRESENTANTE2" tabindex="10"  value="" 
+        maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+			<td width="250px"><span class="lblPADRAO_VLR_CMP" id="lblREL_REPRESENTANTE2"></td>
+      <td>Valor:&nbsp;</td>
+      <td><input type="text" id="txtVALOR_VALE" tabindex="11" value="" 
+        maxlength="7" size="12" onkeyPress="return FormatMoney(this.value, event);"></td>
+
+		</table></td></tr>
+
+    <tr><td width="100%"><table><tr>
+      <td>Desconto %:&nbsp;</td>
+      <td><input type="text" id="txtDESCONTO_VALE" tabindex="12" value="" 
+        maxlength="3" size="5" onkeyPress="return FormatMoney(this.value, event);"></td>
+
+      <td>&nbsp;&nbsp;</td>
+      <td>Data pagar: </td><td><input type="text" id="txtPAGAR_VALE" tabindex="13"  value="" maxlength="8" size="10"
+        onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+      <td></td>
+
+      <td>&nbsp;&nbsp;</td>
+      <td>Descrição:</td>
+      <td><input type="text" id="txtDESCRICAO_VALE" tabindex="14"  value="" maxlength="40" size="50"></td>
+		</table></td></tr>
+
+ </table></td></tr>
+ 
+ <input type=hidden id="numREG" value="@numREG">
+ <input type=hidden id="faltaVERIFICAR" value="@faltaVERIFICAR">
+    
+</table>
+</td></tr></table>

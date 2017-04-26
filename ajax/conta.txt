@@ -1,0 +1,106 @@
+<table bgcolor="white" cellspacing="5" width="100%" ><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td id=btnGRAVAR align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table>
+      <td width="160px">Descrição da operação:<td><input type=text id="txtNOME" tabindex="1" readonly value="vNOME" maxlength="50" size="70"></td>
+			</tr>
+		</table></td></tr>
+		
+  	<tr><td><table>
+  	  <td width="160px" >Tipo:</td>
+  
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(1);">
+        <input type="radio" id="tipo" name="tipo" value="E" checked_1 >Entrada&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona2(2);">
+        <input type="radio" id="tipo" name="tipo" value="S" checked_2>Saida
+      </td>
+  	</table></td></tr>
+
+  	<tr><td><table>
+  	  <td width="160px" >Usada no caixa:&nbsp;</td>
+  
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona3(1);">
+        <input type="radio" id="tipoCAIXA" name="tipoCAIXA" value="I" checked2_1 >Interno&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona3(2);">
+        <input type="radio" id="tipoCAIXA" name="tipoCAIXA" value="E" checked2_2>Geral
+      </td>
+  	</table></td></tr>
+
+
+
+  	<tr style="display:none"><td><table>
+  	  <td width="160px" >Envolvido na operação será:</td>
+  
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona4(1);">
+        <input type="radio" id="tipoENVOLVIDO" name="tipoENVOLVIDO" value="F" checked3_1 >Funcionário&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#F6F7F7';" onclick="seleciona4(2);">
+        <input type="radio" id="tipoENVOLVIDO" name="tipoENVOLVIDO" value="C" checked3_2 >Corretor&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+  	</table></td></tr>
+
+    </tr>
+
+  	<tr id=trINFO_SAIDA bgcolor="#FFCCCC" ><td><table>
+      <tr>
+  	  <td width="30px" >&nbsp;</td>
+
+    	<td style="display:none"><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#FFCCCC';" onclick="checar5();">  					
+    			<tr > 
+            <td onclick="checar5();"><input type="checkbox" id="gerarDEBITO" name="gerarDEBITO" checkedDEBITO /></td>
+            <td>Gerar débito em nome do envolvido</td></td>
+          </tr>
+      </table></td>
+
+  
+    	<td><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+          onmouseout="this.style.backgroundColor='#FFCCCC';" onclick="seleciona3();">  					
+    			<tr style="display:none" > 
+            <td onclick="seleciona3();"><input type="checkbox" id="saidaCHEQUE" name="saidaCHEQUE" checkedSAIDA /></td>
+            <td id=tdsaidaCHEQUE >No relatório de caixa, considerar como "Saída em cheque"</td></td>
+          </tr>
+      </table></td>
+      </tr>
+
+      <tr><td colspan=2><table><tr >
+        <td width="40px">&nbsp</td>
+        <td>Agrupador:</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher agrupador (ou pressione F8)" 
+            onclick="AuxilioF7('txtAGRUPADOR')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" id="txtAGRUPADOR" tabindex="2"  value="vAGRUPADOR" maxlength="4" size="4"
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;width:400px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblAGRUPADOR">v_AGRUPADOR</span></td>
+  		</tr></table></td></tr>
+
+    </tr>
+  	</table></td></tr>
+
+
+
+
+		
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+    
+</table>
+</td></tr></table>

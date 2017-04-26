@@ -1,0 +1,43 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:80%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>Cheque</td>
+    <td align="right"><span onclick="fecharPGTO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+		<tr><td><table style="font-size:9px;">  					
+			<tr>
+        <td>Número: </td><td><input type="text" id="txtCHEQUE" tabindex="1"  value="" maxlength="7" size="8" ></td>
+
+			<td>&nbsp;&nbsp;Banco:</td>					
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher banco (ou pressione F8)" 
+          onclick="AuxilioF7('txtBANCO')";><image src="images/setaBAIXO.gif"></td>
+				<td width="50px"><input type="text" id="txtBANCO" tabindex="2"  value="" 
+          maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+				<td width="230px" align="left" ><span class="lblPADRAO_VLR_CMP" id="lblBANCO">&nbsp;</span></td>
+
+        <td >&nbsp;&nbsp;&nbsp;Data: </td><td><input type="text" id="txtDATACH" tabindex="3"  value="" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"  ></td>
+          
+        <td>&nbsp;&nbsp;&nbsp;Valor R$: </td><td><input type="text" id="txtVLRCH" tabindex="4" value="" 
+          maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+			</tr>
+      <tr>
+        <td colspan=12><table><tr>
+          <td>CPF/CNPJ: </td><td><input type="text" id="txtINFOCH" tabindex="5" value="" 
+            maxlength="20" size="30" ></td>
+
+          <td>&nbsp;&nbsp;</td>
+          <td>Nome: </td>
+          <td><input type="text" id="txtNOMECH" tabindex="6" value="" maxlength="50" size="70" style="text-transform: uppercase;" ></td>
+        </tr></table></td>
+      </tr>
+
+		</table></td></tr>
+ </table></td></tr> 
+    
+</table>
+</td></tr></table>

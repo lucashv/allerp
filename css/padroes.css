@@ -1,0 +1,244 @@
+
+
+.lblBotaoBarraRapida
+{
+font-family: verdana;
+font-size: 9px;
+}
+
+.btnBarraRapidaSelecionado {background-color: #a9b2ca;cursor:default;}
+.btnBarraRapidaNaoSelecionado {background-color: white;}
+
+
+.lblTitJanela {
+    font: 12px verdana;
+    color: #000066;
+    font-weight: bold;
+}
+
+
+
+.botaoMudarPlano {
+  font-family: verdana;
+  font-size: 11px;
+  color:black;
+  background-color:#e1e1e1;   
+  border-style:solid;
+  border-width:1pt;
+}
+
+.frmJANELA {
+  background-color:#F6F7F7;     /*#FFF0CD;         /*#fffff0;   */
+/*  background-color:#B9D8AA; */   
+             
+  height: 100%;
+  font-family: Verdana;
+  font-size: 10px;
+  color: black;
+  width:100%;	
+}
+
+
+.frmAUXILIO {
+  background-color:#D8D7D8;
+  height: 100%;
+  font-family: Verdana;
+  font-size: 20px;
+  color: black;
+  width:100%;	
+}
+
+
+
+.frmTOOLTIP {
+  background-color:#c0ffc0;
+  height: 100%;
+  font-family: Verdana;
+  font-size: 10px;
+  color: black;
+  width:100%;	
+}
+
+
+.frmPRINCIPAL {
+  background-color:white;
+}
+
+
+.lblPROCESSANDO {
+  font-family: Verdana;
+  font-size: 12px;
+  font-weight: bold;
+  color: gray;
+}
+
+.lblPADRAO {
+  font-family: Verdana;
+  font-size: 10px;
+  color: black;
+}
+
+
+.lblPADRAO_VLR_CMP {
+  font-family: Verdana;
+  font-size: 10px;
+  color: blue;
+}
+
+
+
+
+select    {
+  font-family: Verdana;
+  font-size: 11px;
+  color: black;  
+}
+
+
+.lblTitUSUARIO {
+  font-family: Verdana;
+  font-size: 11px;
+  color: gray;
+}
+
+.lblUSUARIO {
+  font-family: Verdana;
+  font-size: 11px;
+  font-weight: bold;
+  color: gray;
+}
+
+.lblACAO {
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+}
+
+
+thead.headerFIXO tr {
+FONT-WEIGHT: bold;
+COLOR: white;
+POSITION: relative;  
+/*TOP: expression(this.parentNode.parentNode.parentNode.scrollTop-1); */	
+background-color: #333C83; 
+border-color:#999999 }
+
+tr.titEXAMES {
+FONT-WEIGHT: bold;
+COLOR: white;
+POSITION: relative;  
+/*TOP: expression(this.parentNode.parentNode.parentNode.scrollTop-1); */	
+background-color: #333C83; 
+border-color:#999999 }
+
+
+thead.headerNaoFIXO tr {
+FONT-WEIGHT: bold;
+COLOR: white;
+background-color: gray;
+border-color:#999999 }
+
+
+.CorTxtBoxInativo {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: blue;   /*#25313F;*/
+  border: 1px solid grey;
+  background-color: #F6F7F7; 
+}
+
+
+
+.btnSUBMIT {
+  font-family: verdana;
+  font-size: 10px;
+  color:black;
+  background-color:      #e1e1e1;    
+  border-style:solid;
+  border-width:1pt;
+  display:block;
+}
+
+.cssDIV_ESCONDE  { display:none; }
+
+.cssDIV_AUXILIO {
+position: absolute;  top:50%; left: 50%; width: 500px; height: 50px;	margin-top: -170px; margin-left: -250px; display:block; z-index:10;}
+
+
+
+
+ul.SimpleContextMenu {
+    display: none;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    font-family: verdana;
+    font-size: 12px;
+    list-style-type: none;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+z-index:5;
+}
+
+ul.SimpleContextMenu li {
+      border-bottom: 1px solid #000000;
+}
+
+        ul.SimpleContextMenu li a {
+            display: block;
+            width: 150px;
+            padding: 2px 10px 3px 10px;
+            text-decoration: none;
+            color: black;
+            background: #D5D7DD;
+            font-family:verdana;
+            font-size:12px;
+
+        }
+
+
+        ul.SimpleContextMenu li a:hover {
+            text-decoration: none;
+            color: white;
+            background: #0a246a; /*  #C2D1EE; */
+        }
+
+
+
+ul.SimpleContextMenu_MAIOR {
+    display: none;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    font-family: verdana;
+    font-size: 12px;
+    list-style-type: none;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+ul.SimpleContextMenu_MAIOR li {
+      border-bottom: 1px solid #000000;
+}
+
+
+ul.SimpleContextMenu_MAIOR li a {
+    display: block;
+    width: 300px;
+    padding: 2px 10px 3px 10px;
+    text-decoration: none;
+    color: black;
+    background: #d4d0c8;
+}
+
+ul.SimpleContextMenu_MAIOR li a:hover {
+    text-decoration: none;
+    color: white;
+    /*background: #C2D1EE;*/
+background: #0a246a;    
+}
+
+	

@@ -1,0 +1,111 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+		<tr @estiloMUDAR ><td><table>  					
+			<tr>
+        <td>Período de pagamento relativo a <b><font color=red>vPERIODO</font></b> </td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>
+			<td>Operadora:</td>					
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher operadora (ou pressione F8)" 
+          onclick="AuxilioF7('txtOPERADORA')";><image src="../images/setaBAIXO.gif"></td>
+      <td><input type="text" id="txtOPERADORA" tabindex="1"  maxlength="4" size="6" value="vOPERADORA"
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td><span class="lblPADRAO_VLR_CMP" id="lblOPERADORA">v_OPERADORA</span></td>
+		</table></td></tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+		<tr><td><table>  					
+			<tr>
+        <td>Período para ler confirmações (campo usado: <b><font color=blue>data do extrato da mensalidade</font></b>) </td>
+			</tr>
+		</table></td></tr>
+
+
+
+		<tr><td><table>  					
+			<tr>
+        <td width="120px" >Data inicial:</td>
+        <td><input type="text" id="txtDATAINI_CONF" tabindex="2"  value="vDATAINI_CONF" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+        </td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+        <td width="120px" >Data final:</td>
+        <td><input type="text" id="txtDATAFIN_CONF" tabindex="3"  value="vDATAFIN_CONF" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+        </td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+		<tr ><td><table>  					
+			<tr>
+        <td><font color=red>Se o campo Data pagamento for preenchido, este período ficará disponível no software de comissões dos corretores</font></b>
+        </td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+        <td width="120px" >Dia do pagamento:</td>
+        <td><input type="text" id="txtDATAPGTO" tabindex="4"  value="vDATAPGTO" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+        </td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+
+
+		<tr  @estiloMUDAR id=trDIF2><td><table>  					
+			<tr>
+        <td>Período para ler créditos/débitos (campo usado: <b><font color=blue>data para pagar</font></b>)</td>
+			</tr>
+		</table></td></tr>
+
+		<tr @estiloMUDAR id=trDIF3><td><table>  					
+			<tr>
+        <td width="120px" >Data inicial:</td>
+        <td><input type="text" id="txtDATAINI_VALES" tabindex="5"  value="vDATAINI_VALES" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+        </td>
+			</tr>
+		</table></td></tr>
+
+		<tr  @estiloMUDAR id=trDIF4><td><table>  					
+			<tr>
+        <td width="120px" >Data final:</td>
+        <td><input type="text" id="txtDATAFIN_VALES" tabindex="6"  value="vDATAFIN_VALES" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00/00/00');"  >
+        </td>
+			</tr>
+		</table></td></tr>
+
+
+
+
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+    
+</table>
+</td></tr></table>

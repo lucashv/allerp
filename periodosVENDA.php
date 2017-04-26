@@ -1,0 +1,342 @@
+<?php 
+ob_start();
+require("doctype.php"); 
+session_start();
+?>
+
+<head>
+<link href="<?php echo $_SESSION['arqCSS']; ?>" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/funcoes.js" xml:space="preserve"></script><script
+type="text/javascript" src="js/menuContexto.js" xml:space="preserve"></script><script
+type="text/javascript" src="js/edicaoDados.js" xml:space="preserve"></script>
+<style type="text/css" xml:space="preserve">
+.cssDIV_EDICAO {
+position: absolute; top: 200px;  width: 500px; height: 80px;	
+margin-top: -130px; margin-left: -250px; display:block; z-index:3;}
+
+.cssDIV_AJAX {
+position: absolute; top: 200px; top:50%; left: 50%; 
+width: 50px; height: 50px;	margin-top: -40px; margin-left: -10px; display:block; 
+z-index:20; 
+}
+
+</style>
+</head>
+
+<body style="HEIGHT: 100%; width:100%;" onload="lerREGS();Avisa('');Muda_CSS();ColocaFocoCmpInicial();">
+
+<script type="text/javascript" xml:space="preserve">
+//<![CDATA[
+/* prepara menu de contexto (botao direito do mouse) */
+SimpleContextMenu.setup({'preventDefault':true, 'preventForms':false});
+SimpleContextMenu.attach('container', 'CM1');
+//]]>
+</script>
+<ul id="CM1" class="SimpleContextMenu">
+  <li><a href="javascript:incluirREG();">Novo registro</a></li>
+  <li><a href="javascript:editarREG();">Editar registro</a></li>
+  <li><a href="javascript:excluirREG();">Tornar ativo/inativo</a></li>  
+</ul>
+
+<form id="frmPERIODOS_VENDA" name="frmPERIODOS_VENDA" autocomplete="off" action="" >
+
+<div id="divEDICAO" class="cssDIV_ESCONDE"></div>
+<div id="divAUXILIO" class="cssDIV_ESCONDE">&nbsp;</div>
+
+<div id="divAJAX" class="cssDIV_ESCONDE"  style="text-align:center;" bgcolor=red>
+  <table height="50px" bgcolor="#7CA7FF" rules="rows"  bgcolor="white" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr valign="middle"><td><img src="images/database.png" alt="" /></td></tr>
+  </table>
+</div>
+
+<input id="SELECAO" type="hidden" value="" />
+<input id=SELECAO_2 type=hidden value="" >
+<input id="somenteATIVOS" type="hidden" value="S" />
+
+
+<table>
+<tr align="center" valign="middle">
+  <td width="<?php echo $_SESSION['largIFRAME']; ?>" height="<?php echo $_SESSION['altIFRAME']; ?>">
+  
+    <table cellspacing="0" cellpadding="0" border="1" width="75%" bgcolor="white" style="text-align:left;">
+      <tr><td><table width="100%" cellpadding="0" cellspacing="2"><tr>
+        <td width="80%"><span class="lblTitJanela" id="lblTITULO">&nbsp;&nbsp;</span></td>
+        
+        <td title="Alternar entre ativo/inativo" align="center" onmouseout="this.style.backgroundColor='white'" 
+        onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="alternar();" >
+          <img src="images/trocar.png" />
+        </td>    
+            
+        <td style="cursor: pointer;text-align:right;"  
+          onclick="window.top.frames['framePRINCIPAL'].location.href='representantes.php';" 
+          class="lblTitJanela" >[ X ]</span>
+        </td>      
+      </tr></table></td></tr>
+
+      <tr>
+        <td valign="top" height="<?php echo ($_SESSION['altIFRAME'] * .75); ?> px" >
+          <div id="titTABELA">&nbsp;</div>
+          <div id="divTABELA" style="overflow:auto;min-height:95%;height:95%" class="container"></div>
+        </td>
+      </tr>
+
+      <tr><td><table width="100%"><tr>
+        <td width="'30%" align="right">              
+        <span class="lblUSUARIO" id="totREGS">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;<span>
+        </td>
+        
+      </tr></table></td></tr>
+    </table>
+
+  </td>
+
+</tr>
+</table>
+
+</form>
+
+<script language="javascript" type="text/javascript" xml:space="preserve">//<![CDATA[
+/* qtde de campos text na tela de edição, necessario informar  */
+var nQtdeCamposTextForm = 2;
+
+var largPR = 0;
+
+var aCMPS=new Array();
+aCMPS[0]='txtDATAINI;Digite a data inicial';
+aCMPS[1]='txtDATAFIN;Digite a data final';
+
+var ajax = new execAjax();
+
+/*******************************************************************************/
+function teclado(e)         {
+
+if (window.event) tecla=window.event.keyCode;
+else tecla=e.which;
+
+
+var lJanRegistro=0; 
+
+lJanRegistro= document.getElementById('divEDICAO').getAttribute(propCLASSE)!='cssDIV_ESCONDE';
+
+if  (tecla==27) {
+  if (lJanRegistro)   	fecharEDICAO();
+  else {e.stopPropagation();e.preventDefault();window.top.frames['framePRINCIPAL'].location.href='representantes.php';}
+}  
+ 
+if  (tecla==45 && ! lJanRegistro)   	incluirREG();
+if (lJanRegistro)  eval("teclasNavegacao(e);");
+
+var lF2=tecla==113;
+
+if  ( lF2 && lJanRegistro ) 
+  document.getElementById('btnGRAVAR').click();
+}
+
+if (window.document.addEventListener) 
+ window.document.addEventListener("keydown", teclado, false);
+else 
+ window.document.attachEvent("onkeydown", teclado);
+
+
+/*******************************************************************************/
+function fecharEDICAO()     {
+document.getElementById("divEDICAO").innerHTML='';
+document.getElementById("divEDICAO").setAttribute(propCLASSE, "cssDIV_ESCONDE");
+ColocaFocoCmpInicial();
+}
+
+
+/*******************************************************************************/
+function ColocaFocoCmpInicial(cmp)   {
+
+lJanRegistro= document.getElementById('divEDICAO').getAttribute(propCLASSE)=='cssDIV_EDICAO';
+
+if (cmp!=null) 
+	document.getElementById(cmp).focus();
+	
+else if (lJanRegistro )
+	document.getElementById('txtDATAINI').focus();
+}	
+
+/*******************************************************************************/
+function lerREGS() {
+
+showAJAX(1);
+
+document.getElementById("divTABELA").innerHTML = '';
+document.getElementById("SELECAO").value='';
+
+ajax.criar('ajax/ajaxPERIODOS_VENDA.php?acao=lerREGS&ativos='+
+  document.getElementById('somenteATIVOS').value, desenhaTabela);
+}
+
+
+/*******************************************************************************/
+function  desenhaTabela() {
+if ( ajax.terminouLER() ) {
+  aRESP = ajax.ler().split('|');
+  
+  document.getElementById("titTABELA").innerHTML = aRESP[0];
+  document.getElementById("divTABELA").scrollTop=0;
+  document.getElementById("divTABELA").innerHTML = aRESP[1].split('^')[0];
+  
+  var qtdeREGS = aRESP[1].split('^')[1]; 
+
+  showAJAX(0);
+  
+  centerDiv( 'divEDICAO' );
+  VerificaAcaoInicial();
+  
+  var titulo=document.getElementById('lblTITULO');
+  titulo.innerHTML = '&nbsp;&nbsp;<font size="+1">Períodos para relatório de vendas</font>&nbsp;&nbsp;&nbsp;&nbsp;';
+  
+  if (document.getElementById('somenteATIVOS').value=='S') 
+    titulo.innerHTML += '(Ativos)';
+  else if (document.getElementById('somenteATIVOS').value=='N') 
+    titulo.innerHTML += '(Inativos)';
+  else  
+    titulo.innerHTML += '(Todos)';
+    
+  document.getElementById("totREGS").innerHTML = 'Filtrados: &nbsp;&nbsp;'+qtdeREGS + '&nbsp;&nbsp;';
+  }
+}
+
+
+/*******************************************************************************/
+function incluirREG() {
+showAJAX(1);
+ajax.criar('ajax/ajaxPERIODOS_VENDA.php?acao=incluirREG', desenhaJanelaREG);
+}
+
+/*******************************************************************************/
+function desenhaJanelaREG()     {
+if ( ajax.terminouLER() ) {
+  var divEDICAO = document.getElementById('divEDICAO');
+  
+  divEDICAO.setAttribute(propCLASSE, 'cssDIV_EDICAO');    divEDICAO.innerHTML = ajax.ler();
+  
+  /* muda estilo de campos text, span para o padrão do site */
+  Muda_CSS(); 
+  
+  showAJAX(0);
+  ColocaFocoCmpInicial();
+}
+}  
+
+/*******************************************************************************/
+function editarREG() {
+id = document.getElementById('SELECAO').value 
+if (id=='') { alert('Selecione um registro');return;}
+	
+showAJAX(1);
+ajax.criar('ajax/ajaxPERIODOS_VENDA.php?acao=editarREG&vlr=' + id, desenhaJanelaREG);
+}
+
+/*******************************************************************************/
+function VerCmp(nomeCMP)      {
+
+lJanRegistro= document.getElementById('divEDICAO').getAttribute(propCLASSE)=='cssDIV_EDICAO';
+if (! lJanRegistro)  return;
+
+if (nomeCMP!='todos')    document.getElementById(nomeCMP).style.backgroundColor="#F6F7F7";
+
+var dataINI='null'; data=document.getElementById('txtDATAINI').value;
+if (data.rtrim().ltrim()!='') 
+    dataINI = data.substring(6, 10)+'-'+data.substring(3, 5)+'-'+data.substring(0, 2);
+var dataFIN='null'; data=document.getElementById('txtDATAFIN').value;
+if (data.rtrim().ltrim()!='') 
+    dataFIN = data.substring(6, 10)+'-'+data.substring(3, 5)+'-'+data.substring(0, 2);
+
+cmps= dataINI+'|'+dataFIN+'|'+
+      document.getElementById('numREG').value;
+
+if (nomeCMP!='todos')         {
+	return;
+}
+
+else  {
+	for (i=0;i<aCMPS.length;i++)   {
+		cmp = aCMPS[i].split(';');
+		cCMP = cmp[0]; 
+		cMSG = cmp[1];
+		cVLR = document.getElementById(cCMP).value.rtrim().ltrim();
+    var label = cCMP.replace('txt', 'lbl'); 		
+				
+		erro=0;
+		switch (cCMP)   {
+			case 'txtDATAINI':
+			case 'txtDATAFIN':
+        if ( cVLR=='' || ! verifica_data(cCMP) )   erro=1;
+        break;
+ 		}
+	 if (erro==1) {alert(cMSG);	document.getElementById(cCMP).focus(); return false;}	
+	}	
+
+  /* tudo ok, aciona gravacao do registro, concatena campos em uma variavel */
+	showAJAX(1);
+	ajax.criar('ajax/ajaxPERIODOS_VENDA.php?acao=gravar&vlr=' + cmps, gravou);
+}
+
+}
+
+/*******************************************************************************/
+function gravou() {
+
+if ( ajax.terminouLER() ) {
+  showAJAX(0);
+  
+  resp = ajax.ler();
+  
+  fecharEDICAO();
+  
+  if (resp.indexOf('OK')!=-1)   {
+    document.getElementById('SELECAO').value="";
+  
+  	cID = resp.substring(resp.indexOf(';')+1);
+  	cID= cID.replace('INC_', '');
+  	window.top.document.getElementById('infoTrab').value = 'frmPERIODOS_VENDA:GRAVOU=' + cID
+  	lerREGS();
+  }
+  else
+  	alert('Erro ao gravar: \n\n ' + resp);	
+}
+  
+}
+
+
+
+/*******************************************************************************/
+function excluirREG() {
+id = document.getElementById('SELECAO').value 
+if (id=='') { alert('Selecione um registro');return;}
+
+ajax.criar('ajax/ajaxPERIODOS_VENDA.php?acao=mudarSITUACAO&vlr=' + id, '', 0);
+if (ajax.ler().indexOf('ok')==-1) 
+  alert('Erro ao gravar!!! \n\n' + ajax.ler());
+  
+window.top.document.getElementById('infoTrab').value = 'frmPERIODOS_VENDA:GRAVOU=' + id
+lerREGS();  
+}
+
+
+
+/************************************/
+function alternar()  {
+ativos = document.getElementById('somenteATIVOS').value;
+ 
+if (ativos=='S') var agora='N';
+else if (ativos=='N') var agora='';
+else var agora='S';
+
+document.getElementById('somenteATIVOS').value = agora;
+setTimeout('void(0)', 200);
+
+lerREGS();
+}
+
+
+//]]></script>
+  </body>
+</html>

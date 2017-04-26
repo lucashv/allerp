@@ -1,0 +1,101 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table><tr>
+      <td>Descricao: </td><td><input type=text id="txtDESCRICAO" tabindex="1" readonly value="vDESCRICAO" maxlength="35" size="50"></td>
+			</tr>
+		</table></td></tr>
+		
+		<tr><td><hr></td></tr>
+		
+    <tr><td><table><tr>
+			<td width="350px" align="right">Comissão sobre remoção (única para todas as propostas):</td>					
+			<td><input type="text" id="txtREMOCAO" tabindex="2" readonly value="vREMOCAO" 
+         maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+		</tr></table></td></tr>
+
+    <tr><td><hr></td></tr>
+    
+    <tr><td>&nbsp;Comissão sobre adesão</td></tr>    
+		
+    <tr><td><table><tr>
+			<td width="350px" align="right">Representante do escritório:</td>					
+			<td><input type="text" id="txtADESAO" tabindex="3" readonly value="vADESAO1" 
+         maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+		</tr></table></td></tr>
+		
+    <tr><td><table><tr>
+			<td width="350px" align="right">Representante terceirizado:</td>					
+			<td><input type="text" id="txtADESAO3" tabindex="4" readonly value="vADESAO3" 
+         maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+		</tr></table></td></tr>
+
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td><table><tr>
+			<td width="350px" align="right">Representante do tele:</td>					
+			<td><input type="text" id="txtADESAO2" tabindex="5" readonly value="vADESAO2" 
+         maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+		</tr></table></td></tr>
+		
+		
+    <tr><td><table><tr>
+			<td width="350px" align="right">Teleatendente:</td>					
+			<td><input type="text" id="txtADESAO4" tabindex="6" readonly value="vADESAO4" 
+         maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+		</tr></table></td></tr>
+		
+    <tr><td><table><tr>
+			<td width="350px" align="right">Supervisor do tele:</td>					
+			<td><input type="text" id="txtADESAO5" tabindex="7" readonly value="vADESAO5" 
+         maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+		</tr></table></td></tr>
+		
+		
+		
+
+
+    <tr><td><table><tr>
+      <td><hr style="width:20px"></td>
+      <td><font color="blue"> Residual sobre adesão </font></td>
+      <td><hr  style="width:300px"></td>
+    </tr></table></td></tr>
+    
+		
+    <tr><td><table>
+      <tr><td colspan="2">Pagar 10% sobre adesão (no mês cadastro +1, +2) quando:</td><tr>
+			<tr >
+        <td width="10px" style="padding-left:20px"><input type="radio" @opcao1 id="tipoCALCULO" name="tipoCALCULO" value="1" onclick="atlOPCAO();"></td>
+        <td>Quantidade vidas</td>
+      </tr>
+      <tr >  
+        <td style="padding-left:20px"><input type="radio" id="tipoCALCULO" @opcao2 name="tipoCALCULO" value="2" onclick="atlOPCAO();"></td>
+        <td>Valor adesão</td>
+        <td>
+      </tr>  
+        
+			<tr>
+      <td colspan="2">for igual ou superior a <input type="text" id="txtCALCULO" tabindex="8" readonly value="vCALCULO" 
+         maxlength="5" size="8" onKeyPress="return sistema_formatar(event, this, '00000');"></td>
+		</tr></table></td></tr>
+		
+		
+
+		
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+    
+</table>
+</td></tr></table>

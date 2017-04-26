@@ -1,0 +1,120 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:80%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+		<tr><td><table>  					
+			<tr>
+        <td>@editavel</td>
+			</tr>
+		</table></td></tr>
+
+
+		<tr><td><table>  					
+			<tr>
+        <td width="85px">Tipo :</td><td><input readonly type="text" id="txtTIPO" tabindex="1"  value="vTIPO" maxlength="1" size="2"
+          onKeyPress="return sistema_formatar(event, this, 'C');"  ></td>
+          <td>(<font color=blue><b>C</b></font>= crédito   <font color=blue><b>D</b></font>= débito)</td>
+			</tr>
+		</table></td></tr>
+
+			
+		<tr><td><table>  					
+			<tr>
+				<td width="85px">Corretor:</td>					
+				<td onmouseover="this.style.cursor='pointer';" title="Escolher representante (ou pressione F8)" 
+          onclick="AuxilioF7('txtREPRESENTANTE');"><image src="images/setaBAIXO.gif"></td>
+				<td><input type="text" readonly id="txtREPRESENTANTE" tabindex="2"  value="vREPRESENTANTE" 
+          maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+				<td><span class="lblPADRAO_VLR_CMP" id="lblREPRESENTANTE">vNomeREPRESENTANTE</td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">Data registro: </td><td><input readonly type="text" id="txtDATA" tabindex="3"  value="vDATA" maxlength="8" size="10"
+        onKeyPress="return sistema_formatar(event, this, '00/00/00');"  ></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">Valor: </td><td><input type="text" id="txtVALOR" tabindex="4"  readonly value="vVALOR" 
+        maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+			</tr>
+		</table></td></tr>
+
+
+		
+    <tr><td><table>
+      <td width="85px">Descrição: </td>
+        <td><input type="text" id="txtDESCRICAO" tabindex="5"  value="vDESCRICAO" readonly  maxlength="90" size="90"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">Pagar em: </td><td><input readonly type="text" id="txtDATAPAGAR" tabindex="6"  value="vPAGARDATA" maxlength="8" size="10"
+        onKeyPress="return sistema_formatar(event, this, '00/00/00');"  ></td>
+			</tr>
+		</table></td></tr>
+
+
+
+    <tr><td><table><tr>
+      <td>Registrado por: </td><td><span class="lblPADRAO_VLR_CMP">vOPERADOR</td>
+			</tr>
+		</table></td></tr>
+
+
+    <tr id=trPAGO bgcolor='#FFCCCC'><td><table>
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#FFCCCC';" onclick="checar();">  					
+  			<tr> 
+          <td onclick="checar();"><input type="checkbox" id="chkPAGO" name="chkPAGO" checkedPAGO /></td>
+          <td>Vale crédito pago</td>
+        </tr>
+    	</table></td></tr>
+
+      <tr style='color:gray'><td><table>
+        <td >Pagamento(s) feito(s) na(s) operaçao(ções) de caixa nº:</td><td><td><span class="lblPADRAO_VLR_CMP">vOPERACOES_PGTO</td></td>
+  			</tr>
+  		</table></td></tr>
+
+
+  		<tr><td ><table onmouseover="this.style.backgroundColor='#a9b2ca';this.style.cursor='pointer';"  
+        onmouseout="this.style.backgroundColor='#FFCCCC';" onclick="checar2();">  					
+  			<tr> 
+          <td onclick="checar2();"><input type="checkbox" id="chkSAIDA" name="chkSAIDA" checkedCAIXA /></td>
+          <td>Dar saída caixa hoje</td>
+        </tr>
+    	</table></td></tr>
+
+
+        <tr style='color:gray'><td><table>
+          <td width="85px">Desconto: </td><td><td><span class="lblPADRAO_VLR_CMP">vDESCONTO</td></td>
+    			</tr>
+    		</table></td></tr>
+
+  			<tr style='color:gray'><td colspan=2><table><tr>
+          <td>Pago em: <font color=blue>vDATA_VALE</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Operador responsável: <font color=blue>vPAGO_VALE</font></td>
+        </tr></table></td></tr>
+  			<tr><td colspan=2><table><tr>
+          <td id=tdINFO_VALE>vINFO_VALE</td>
+        </tr></table></td></tr>
+
+
+		</table></td></tr>
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+ <input type=hidden id="numVALE_CREDITO" value="@numVALE_CREDITO">
+ <input type=hidden id="opCaixaPagamento" value="@opCaixaPagamento">
+    
+</table>
+</td></tr></table>

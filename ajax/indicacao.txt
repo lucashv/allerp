@@ -1,0 +1,123 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:30%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+
+    <td id="btnGRAVAR" align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table>
+      <td width="85px">Nome: </td>
+        <td><input type="text" readonly id="txtNOME" tabindex="1"  value="vNOME"   maxlength="60" size="80"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">Telefone(s): </td>
+        <td><input type="text" readonly id="txtFONES" tabindex="2"  value="vFONES"   maxlength="60" size="80"></td>
+        <td width="70px">&nbsp;</td>
+        <td><font color=red><b>NÃO USE TRAÇO (-), SOMENTE NÚMEROS</b></td>
+			</tr>
+		</table></td></tr>
+
+
+		<tr><td><table>  					
+			<tr>
+				<td width="85px">Produto:</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher produto (ou pressione F8)"  
+            onclick="AuxilioF7('txtATENDIMENTO_PRODUTO')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly  id="txtATENDIMENTO_PRODUTO" tabindex="3"  value="vATENDIMENTO_PRODUTO" maxlength="4" size="6" value='vATENDIMENTO_PRODUTO'
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblATENDIMENTO_PRODUTO">vnomeATENDIMENTO_PRODUTO</span></td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+				<td width="85px">Origem:</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher indicação (ou pressione F8)"  
+            onclick="AuxilioF7('txtINDICACAO')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly  id="txtINDICACAO" tabindex="4"  value="vINDICACAO" maxlength="4" size="6" 
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblINDICACAO">vnomeINDICACAO</span></td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+				<td width="85px">Corretor:</td>
+  			<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)"  
+            onclick="AuxilioF7('txtREPRESENTANTE')";><image src="images/setaBAIXO.gif"></td>
+        <td><input type="text" readonly  id="txtREPRESENTANTE" tabindex="5"  value="vREPRESENTANTE" maxlength="4" size="6" 
+              onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+        <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblREPRESENTANTE">vnomeREPRESENTANTE</span></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">Observações: </td>
+        <td><input type="text" readonly id="txtOBS" tabindex="6"  value="vOBS"   maxlength="300" size="120"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table>
+      <td width="85px">E-mail: </td>
+        <td><input type="text" readonly id="txtEMAIL" tabindex="7"  value="vEMAIL"   maxlength="100" size="120"></td>
+			</tr>
+		</table></td></tr>
+
+
+		<tr><td><table cellpadding=0 cellspacing=0>  					
+			<tr> 
+        <td width="650px" ><table><tr>
+  				<td width="85px">Situação:</td>
+    			<td onmouseover="this.style.cursor='pointer';" title="Escolher situaço (ou pressione F8)"  
+              onclick="AuxilioF7('txtSITUACAO')";><image src="images/setaBAIXO.gif"></td>
+          <td><input type="text" readonly  id="txtSITUACAO" tabindex="8"  value="vSITUACAO" maxlength="4" size="6" 
+                onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+          <td style="padding-left:5px;" align="left"><span class="lblPADRAO_VLR_CMP" id="lblSITUACAO">vnomeSITUACAO</span></td>
+        </tr></table></td>
+
+
+        <td style="cursor:pointer" title="Nova ocorrência" align=center width="100px" rowspan=2 onmouseout="this.style.backgroundColor='#F6F7F7'" 
+        onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="novaOCORRENCIA();" >
+          <img src="images/nova_ocorrencia.png" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td width="750px"><table><tr>    
+          <td width="85px">Iniciado em: </td><td><input  type="text" readonly id="txtDATA" tabindex="9"  value="vDATA" maxlength="8" size="10"
+            onKeyPress="return sistema_formatar(event, this, '00/00/00');"  ></td>
+
+          <td width="80px">&nbsp;</td>
+          <td>Iniciado por: </td><td><span class="lblPADRAO_VLR_CMP" id=lblRESPONSAVEL>vOPERADOR</td>
+        </tr></table></td>
+      </tr>
+  	</table></td></tr>
+
+		<tr><td><table width="100%">  					
+      <tr>
+        <td valign="top" height="@altDivHISTORICO" >
+          <div>@titHISTORICO</div>
+          <div id="divTabHISTORICO" style="overflow:auto;min-height:95%;height:95%;overflow:-moz-scrollbars-vertical;color:blue;">@tabHISTORICO</div>
+        </td>
+      </tr>
+		</table></td></tr>
+
+
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+ <input type=hidden id="hidREPRESENTANTE" value="@idREPRESENTANTE">
+ <input type=hidden id="hidSO_LEITURA" value="@SO_LEITURA">
+    
+</table>
+</td></tr></table>

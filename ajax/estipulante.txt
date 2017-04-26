@@ -1,0 +1,118 @@
+<table bgcolor="white" cellspacing="5" width="100%" ><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:70%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td align="center" id=btnGRAVAR align=center onmouseout="this.style.backgroundColor='#F6F7F7'" 
+    onmouseover="this.style.backgroundColor='#A9B2CA'" onclick="return VerCmp('todos');" >
+      <span style="cursor: pointer;" class="lblTitJanela">texto_botao</span>
+    </td>    
+    <td align="right"><span onclick="fecharEDICAO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table><tr>
+      <td>Nome: </td><td><input type=text id="txtNOME" tabindex="1" readonly value="vNOME" maxlength="50" size="55"></td>
+      <td>&nbsp;CNPJ: </td><td><input type=text id="txtCNPJ" tabindex="2" readonly value="vCNPJ" maxlength="18" size="25"
+          onKeyPress="return sistema_formatar(event, this, '00.000.000/0000-00');"></td>
+      <td>&nbsp;&nbsp;&nbsp;Insc Estadual:</td><td><input type=text id="txtINSCRICAO" tabindex="3" readonly value="vINSCRICAO" maxlength="20" size="20"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Endereço: </td><td><input type=text id="txtEND" tabindex="4" readonly value="vEND" maxlength="60" size="45"></td>
+      <td>&nbsp;Bairro: </td><td><input type=text id="txtBAIRRO" tabindex="5" readonly value="vBAIRRO" maxlength="45" size="35"></td>
+			<td>&nbsp;CEP: </td><td><input type=text id="txtCEP" tabindex="6" readonly value="vCEP" maxlength="9" size="11"
+        onKeyPress="return sistema_formatar(event, this, '00000-000');"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Município: </td><td><input type=text id="txtMUNICIPIO" tabindex="7" readonly value="vMUNICIPIO" maxlength="45" size="45"></td>
+			<td>&nbsp;UF: </td><td><input type=text id="txtUF" tabindex="8" readonly value="vUF" maxlength="2" size="4"</td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Endereço correspondência: </td><td><input type=text id="txtEND2" tabindex="9" readonly value="vEND2" maxlength="60" size="45"></td>
+      <td>&nbsp;Bairro: </td><td><input type=text id="txtBAIRRO2" tabindex="10" readonly value="vBAIRRO2" maxlength="45" size="35"></td>
+			<td>&nbsp;CEP: </td><td><input type=text id="txtCEP2" tabindex="11" readonly value="vCEP2" maxlength="9" size="11"
+        onKeyPress="return sistema_formatar(event, this, '00000-000');"></td>
+			</tr>
+		</table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Município: </td><td><input type=text id="txtMUNICIPIO2" tabindex="12" readonly value="vMUNICIPIO2" maxlength="45" size="45"></td>
+			<td>&nbsp;UF: </td><td><input type=text id="txtUF2" tabindex="13" readonly value="vUF2" maxlength="2" size="4"</td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Fone: </td><td><input type=text id="txtFONE" tabindex="14" readonly value="vFONE" maxlength="20" size="22"></td>
+			<td>&nbsp;FAX: </td><td><input type=text id="txtFAX" tabindex="15" readonly value="vFAX" maxlength="20" size="22"</td>
+			<td>&nbsp;Email: </td><td><input type=text id="txtEMAIL" tabindex="16" readonly value="vEMAIL" maxlength="45" size="40"</td>
+    </tr></table></td></tr>
+    
+    <tr><td><hr></td></tr>
+    
+    <tr><td><table><tr>
+      <td>Responsável: </td><td><input type=text id="txtRESPONSAVEL" tabindex="17" readonly value="vRESPONSAVEL" maxlength="45" size="45"></td>
+      <td>&nbsp;&nbsp;Data Nasc Responsável: </td><td><input type=text id="txtNASC_RESPONSAVEL" tabindex="18" readonly value="vNASC_RESPONSAVEL" maxlength="10" size="12"
+          onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Contato RH: </td><td><input type=text id="txtRH" tabindex="19" readonly value="vRH" maxlength="45" size="45"></td>
+      <td>&nbsp;&nbsp;Data Nasc Contato RH: </td><td><input type=text id="txtNASC_RH" tabindex="20" readonly value="vNASC_RH" maxlength="10" size="12"
+          onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Vigência: </td><td><input type=text id="txtVIGENCIA" tabindex="21" readonly value="vVIGENCIA" maxlength="10" size="12"
+          onKeyPress="return sistema_formatar(event, this, '00/00/0000');"></td>
+      <td>&nbsp;&nbsp;Dia vencto: </td><td><input type=text id="txtVENCTO" tabindex="22" readonly value="vVENCTO" maxlength="2" size="3"></td>
+      <td>&nbsp;&nbsp;Nº funcionários: </td><td><input type=text id="txtFUNCIONARIOS" tabindex="23" readonly value="vFUNCIONARIOS" maxlength="20" size="20"></td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Total dependentes optantes pelo plano: </td><td><input type=text id="txtOPTANTES" tabindex="24" readonly value="vOPTANTES" maxlength="20" size="25"></td>
+      <td>Compra de carência: </td><td><input type=text id="txtCARENCIA" tabindex="25" readonly value="vCARENCIA" maxlength="45" size="45"></td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Abatimento nível: </td><td><input type=text id="txtABATIMENTO" tabindex="26" readonly value="vABATIMENTO" maxlength="20" size="25"></td>
+      <td>&nbsp;&nbsp;&nbsp;Tabela de valores: </td><td><input type=text id="txtTABELA" tabindex="27" readonly value="vTABELA" maxlength="45" size="45"></td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Carta de liberalidade: </td><td><input type=text id="txtCARTA" tabindex="28" readonly value="vCARTA" maxlength="45" size="45"></td>
+      <td>&nbsp;&nbsp;Risco: </td><td><input type=text id="txtRISCO" tabindex="29" readonly value="vRISCO" maxlength="2" size="2"></td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Representante:</td>
+  		<td onmouseover="this.style.cursor='pointer';" title="Escolher representante (ou pressione F8)" 
+          onclick="AuxilioF7('txtREPRESENTANTE')";><image src="images/setaBAIXO.gif"></td>
+      <td><input type="text" id="txtREPRESENTANTE" tabindex="30"  value="vREPRESENTANTE" maxlength="4" size="4"
+            onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+      <td style="padding-left:5px;WIDTH:190px" align="left"><span class="lblPADRAO_VLR_CMP" id="lblREPRESENTANTE">v_REPRESENTANTE</span></td>
+      <td>&nbsp;&nbsp;Ramo de atividade: </td><td><input type=text id="txtRAMO" tabindex="31" readonly value="vRAMO" maxlength="20" size="20"></td>
+    </tr></table></td></tr>
+
+    <tr><td><table><tr>
+      <td>Nº na CLINIPAM&nbsp;&nbsp;<input type=text id="txtNUMCLINIPAM" tabindex="32" readonly value="vNUMCLINIPAM" maxlength="20" size="30"></td>
+    </tr></table></td></tr>
+
+
+    <tr><td><table><tr>    
+      <td style="padding-left:20px;">
+        <textarea style="color:blue;font-family:verdana;font-size:10px" rows="1" 
+        cols="120" id="txtOBSERVACOES" tabindex="182" onclick="javascript:cfoco='txtOBSERVACOES';" >vOBSERVACOES</textarea>
+      </td>
+    </tr></table></td></tr>
+    
+ </table></td></tr> 
+ <input type=hidden id="numREG" value="@numREG">
+    
+</table>
+</td></tr></table>
+

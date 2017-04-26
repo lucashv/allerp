@@ -1,0 +1,21 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:80%" style="cursor: move;"><span class=lblTitJanela id=tituloDIALOGO>Internet</td>
+    <td align="right"><span onclick="fecharPGTO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+		<tr><td><table style="font-size:9px;">  					
+			<tr>
+
+        <td>&nbsp;&nbsp;&nbsp;Valor R$: </td><td><input type="text" id="txtDINHEIRO" tabindex="1" value="" 
+          maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+			</tr>
+		</table></td></tr>
+ </table></td></tr> 
+    
+</table>
+</td></tr></table>

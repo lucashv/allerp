@@ -1,0 +1,42 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:80%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>Vale crédito</td>
+    <td align="right"><span onclick="fecharPGTO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+		<tr><td><table style="font-size:10px;">  					
+	  <tr>
+
+			<td>Nº&nbsp;&nbsp;vale crédito:</td>					
+      <td><input type="text" id="txtVALE_PGTO" tabindex="1"  value="" maxlength="8" size="10"
+          onKeyPress="return sistema_formatar(event, this, '00000000');"  ></td>
+
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>&nbsp;&nbsp;&nbsp;Valor R$: </td><td><input type="text" id="txtVALORVALECREDITO" tabindex="2" value="" 
+        maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+  	</tr>
+
+		</table></td></tr>
+
+		<tr><td><table style="font-size:10px;">
+	  <tr>
+			<td>Valor do vale crédito:&nbsp;&nbsp;</td>					
+      <td style="color:blue;width:70px;" id=lblINICIALVALECREDITO></td>
+
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>Valor usado:&nbsp;&nbsp;</td>					
+      <td style="color:blue;width:70px;" id=lblUSADOVALECREDITO></td>
+
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>Valor disponível:&nbsp;&nbsp;</td>					
+      <td style="color:blue;width:70px;" id=lblDISPONIVELVALECREDITO></td>
+		</table></td></tr>
+      
+ </table></td></tr> 
+    
+</table>
+</td></tr></table>

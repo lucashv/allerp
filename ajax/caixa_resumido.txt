@@ -1,0 +1,71 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:60%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>TITULO_JANELA</td>
+    <td align="right"><span onclick="fecharCAIXA()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+    <tr><td><table>
+      <td>Operador(a) responsável: </td><td width="205px"><span class="lblPADRAO_VLR_CMP">vOPERADOR</td>
+      <td width="100px">&nbsp;</td>
+      <td @estiloOPERADOR_EXCLUIU id=opEXCLUIU>@titOPERADOR_EXCLUIU</td>
+      <td @estiloOPERADOR_EXCLUIU><span class="lblPADRAO_VLR_CMP">@nomeOPERADOR_EXCLUIU</span></td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+        <td width="120px" >Data: </td>
+        <td><span class="lblPADRAO_VLR_CMP">vDATA</td></td>
+        <td width="60px">&nbsp;</td>
+        <td>Local atual:</td> 
+        <td width="250px"><span class="lblPADRAO_VLR_CMP">@local</span></td>
+        <td>Local original:</td> 
+        <td><span class="lblPADRAO_VLR_CMP">@localORIGINAL</span></td>
+			</tr>
+		</table></td></tr>
+		
+		<tr><td><table>  					
+			<tr>
+    		<td width="120px" >Conta:</td>					
+				<td><span class="lblPADRAO_VLR_CMP">vdescCONTA (vCONTA)</span></td> 
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr>
+    		<td width="120px" id=tdENVOLVIDO>Funcionário/corretor:</td>					
+				<td><span class="lblPADRAO_VLR_CMP">v_FUNCIONARIO (vFUNCIONARIO)</span></td> 
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table>  					
+			<tr height="25px">
+        <td width="120px" >Descrição:</td>
+				<td><span class="lblPADRAO_VLR_CMP">vDESCRICAO</span></td>
+			</tr>
+		</table></td></tr>
+
+		<tr><td><table width="100%">  					
+      <tr>
+        <td valign="top" height="@altDivPAGAMENTOS" >
+          <div>@titPAGAMENTOS</div>
+          <div id="divTabPAGAMENTOS" style="overflow:auto;min-height:95%;height:95%;overflow:-moz-scrollbars-vertical;color:blue;">@tabPAGAMENTOS</div>
+        </td>
+      </tr>
+		</table></td></tr>
+		
+		<tr><td><table width="100%">  					
+      <tr>
+        <td valign="top" height="@altDivVALES" >
+          <div>@titVALES</div>
+          <div id="divTabVALES" style="overflow:auto;min-height:95%;height:95%;overflow:-moz-scrollbars-vertical;color:blue;">@tabVALES</div>
+        </td>
+      </tr>
+		</table></td></tr>
+
+</table>
+</td></tr></table>

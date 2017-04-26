@@ -1,0 +1,28 @@
+<table bgcolor="white" cellspacing="5" width="100%"><tr><td>
+<table class="frmJANELA" border=1 width="100%" cellpadding=3  >
+  <tr><td><table width="100%" > 
+    <tr>
+    <td style="width:80%" style="cursor: move;"><span class=lblTitJanela id=tituloEDICAO>Vale</td>
+    <td align="right"><span onclick="fecharPGTO()" style="cursor: pointer;" class=lblTitJanela>[ X ]</td></tr></td></table>
+  </td</tr>					
+
+  <tr><td><table width="100%">  
+
+		<tr><td><table style="font-size:9px;">  					
+			<tr>
+
+			<td>Corretor:</td>					
+			<td onmouseover="this.style.cursor='pointer';" title="Escolher corretor (ou pressione F8)" 
+          onclick="AuxilioF7('txtREL_REPRESENTANTE')";><image src="images/setaBAIXO.gif"></td>
+				<td width="50px"><input type="text" id="txtREL_REPRESENTANTE" tabindex="1"  value="" 
+          maxlength="4" size="6" onKeyPress="return sistema_formatar(event, this, '0000');"></td>
+				<td width="230px" align="left" ><span class="lblPADRAO_VLR_CMP" id="lblREL_REPRESENTANTE">&nbsp;</span></td>
+
+        <td>&nbsp;&nbsp;&nbsp;Valor R$: </td><td><input type="text" id="txtVLRVALE" tabindex="2" value="" 
+          maxlength="7" size="10" onkeyPress="return FormatMoney(this.value, event);"></td>
+			</tr>
+		</table></td></tr>
+ </table></td></tr> 
+    
+</table>
+</td></tr></table>
