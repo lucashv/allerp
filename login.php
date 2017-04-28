@@ -86,6 +86,8 @@ if (Session_id('perdeuSession')=='sim') { ?>
 //<![CDATA[
 //******* VARIAVEIS PADRAO DE TODO FORM
 var nQtdeCamposTextForm = 2;
+
+
 var aCmps = new Array(2);
 
 aCmps[0]="txtNUMERO;Identifique o usuário.";
@@ -167,10 +169,10 @@ if ( nomeCMP.indexOf('todos') != -1 )             {
         if ( (lblNOME.innerHTML=="") || (lblNOME.innerHTML=="INEXISTENTE") )  erro=1;
         
         break;
-        LowerCase() != cSENHA.toLowerCase() )  erro=1;
         
       case 'txtSENHA':
-        if ( vlr.to
+        if ( vlr.toLowerCase() != cSENHA.toLowerCase() )  erro=1;
+        
         break;
     }
     if (erro==1)    { document.getElementById(cmp).focus();    alert(msg);    return false; break;  }
