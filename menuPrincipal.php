@@ -13,9 +13,6 @@ session_start();
     <script language="JavaScript" src="js/JSCookMenu.js" type="text/javascript" xml:space="preserve"></script>
     <script language="JavaScript" src="js/funcoes.js" type="text/javascript" xml:space="preserve"></script>
     <link href="css/padroes.css" type="text/css" rel="stylesheet" />
-</head>
-<body style="HEIGHT: 100%; width:100%;" onload="prepararTELA();
-        posicionarIframe();">
     <script language="javascript" type="text/javascript" xml:space="preserve">
         //<![CDATA[
 
@@ -148,13 +145,14 @@ session_start();
 
         /*************************************************/
         function prepararTELA() {
+            var framePRINCIPAL = document.getElementById("framePRINCIPAL");
+            
             buscaAjax.criar('ajax/ajax.php?acao=montarMENU', '', 0);
-
             /*alert( buscaAjax.ler() );*/
             eval("var myMenu = 	[ " + buscaAjax.ler() + "]; ");
-
             cmDraw('myMenuID', myMenu, 'hbr', cmThemeOffice, 'ThemeOffice');
-
+            
+            framePRINCIPAL.height = window.innerHeight;
         }
 
 
@@ -171,8 +169,10 @@ session_start();
 
         //]]>
     </script>
+</head>
+<body onload="prepararTELA();posicionarIframe();" style="background-color: #eeeeee">
     <form id="frmPRINCIPAL" action="">
-        <table style="width:98%;height:100%;" border="0" cellpadding="0" cellspacing="0">
+        <table style="width:98%;" border="0" cellpadding="0" cellspacing="0">
             <tr width="100%">
                 <td width="100%">
                     <div id="myMenuID" width="100%"></div>
@@ -180,164 +180,143 @@ session_start();
             </tr>
             <tr>
                 <td>
-                    <table cellpadding="2" border="0" align="left" width="100%" >
+                    <table style="width: 100%; height: 100%;">
                         <tr>
-                            <?
-                            require_once( 'includes/definicoes.php' );
+                            <td style="vertical-align: top; border: 1px solid #000000; width:100px; background-color: #ffffff">  
+                                <div style="overflow: hidden; height: 520px; width: 200px;">
+                                    <?
+                                    require_once( 'includes/definicoes.php' );
 
-                            $conexao = mysql_connect($servidor, $loginMYSQL, $senha) or die(mysql_error());
-                            mysql_select_db($baseMYSQL, $conexao) or die(mysql_error());
+                                    $conexao = mysql_connect($servidor, $loginMYSQL, $senha) or die(mysql_error());
+                                    mysql_select_db($baseMYSQL, $conexao) or die(mysql_error());
 
-                            $infoUSUARIO = explode(';', $_SESSION['idUSUARIO_LOGADO']);
-                            $idUSUARIO = $infoUSUARIO[1];
+                                    $infoUSUARIO = explode(';', $_SESSION['idUSUARIO_LOGADO']);
+                                    $idUSUARIO = $infoUSUARIO[1];
 
-                            $sql = "select permissoes from operadores where numero = $idUSUARIO ";
-                            $resultado = mysql_query($sql, $conexao) or die(mysql_error());
+                                    $sql = "select permissoes from operadores where numero = $idUSUARIO ";
+                                    $resultado = mysql_query($sql, $conexao) or die(mysql_error());
 
-                            $row = mysql_fetcH_object($resultado);
-                            $permissoes = $row->permissoes;
+                                    $row = mysql_fetcH_object($resultado);
+                                    $permissoes = $row->permissoes;
 
-                            if (strpos($permissoes, 'D') !== false || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Corretores" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(0);">
-                                    <img src="images/BR_representantes.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            if (strpos($permissoes, 'B') !== false || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Produtos" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
-                                    onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(43);"> 
-                                    <img src="images/BR_planos.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            if (strpos($permissoes, 'G') !== false || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Créditos/Débitos" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
-                                    onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(4);">
-                                    <img src="images/BR_creditos2.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            if ((strpos($permissoes, 'J') !== false || strpos($permissoes, 'U') !== false) || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Propostas" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(11);">
-                                    <img src="images/BR_propostas.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            if (strpos($permissoes, 'R') !== false || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Confirmações" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(27);">
-                                    <img src="images/BR_baixar.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            if ((strpos($permissoes, 'H') !== false || strpos($permissoes, 'I') !== false) || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Caixa" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(23);">
-                                    <img src="images/BR_caixa.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            if ((strpos($permissoes, 'K') !== false) || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Operadores do sistema" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(2);">
-                                    <img src="images/BR_operadores.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            ?>
+                                    if (strpos($permissoes, 'D') !== false || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Corretores" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(0);">
+                                            <img src="images/BR_representantes.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    if (strpos($permissoes, 'B') !== false || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Produtos" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
+                                            onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(43);"> 
+                                            <img src="images/BR_planos.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    if (strpos($permissoes, 'G') !== false || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Créditos/Débitos" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
+                                            onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(4);">
+                                            <img src="images/BR_creditos2.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    if ((strpos($permissoes, 'J') !== false || strpos($permissoes, 'U') !== false) || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Propostas" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(11);">
+                                            <img src="images/BR_propostas.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    if (strpos($permissoes, 'R') !== false || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Confirmações" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(27);">
+                                            <img src="images/BR_baixar.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    if ((strpos($permissoes, 'H') !== false || strpos($permissoes, 'I') !== false) || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Caixa" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(23);">
+                                            <img src="images/BR_caixa.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    if ((strpos($permissoes, 'K') !== false) || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Operadores do sistema" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(2);">
+                                            <img src="images/BR_operadores.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    ?>
 
 
-                            <?
-                            if ((strpos($permissoes, 'S') !== false || strpos($permissoes, 'T') !== false) || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Plantão" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(28);">
-                                    <img src="images/BR_ligacoes.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            ?>
-                            <?
-                            if ((strpos($permissoes, 'X') !== false) || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Seguros" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
-                                    onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(38);">
-                                    <img src="images/BR_seguros.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            ?>
-                            <?
-                            if ((strpos($permissoes, 'Q') !== false) || $idUSUARIO == 1) {
-                                ?>
-                                <td width="5%" title="Relatórios" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(26);">
-                                    <img src="images/BR_relatorios.png" alt="" />
-                                </td>
-                                <?
-                            }
-                            ?>
-                            <td width="5%" title="Sair" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Sair();">
-                                <img src="images/BR_sair.png" alt="" />
-                            </td>
-                            <?php 
-                            if ($_SESSION['usarTipoIMAGEM'] == '_HD') { ?>
-                                <td width="60%" align="right" ><table width="100%" style="text-align:right">
+                                    <?
+                                    if ((strpos($permissoes, 'S') !== false || strpos($permissoes, 'T') !== false) || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Plantão" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(28);">
+                                            <img src="images/BR_ligacoes.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    ?>
+                                    <?
+                                    if ((strpos($permissoes, 'X') !== false) || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Seguros" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
+                                            onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(38);">
+                                            <img src="images/BR_seguros.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    ?>
+                                    <?
+                                    if ((strpos($permissoes, 'Q') !== false) || $idUSUARIO == 1) {
+                                        ?>
+                                        <div width="5%" title="Relatórios" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(26);">
+                                            <img src="images/BR_relatorios.png" alt="" />
+                                        </div>
+                                        <?
+                                    }
+                                    ?>
+                                                                       
+                                </div>
+                                <!--<div width="5%" title="Sair" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Sair();">
+                                    <img src="images/BR_sair.png" alt="" />
+                                </div>-->                                
+                                <div width="60%" align="right" >
+                                    <table width="100%" style="text-align:right">
                                         <tr>
                                             <td><span class="lblTitUSUARIO">&nbsp;&nbsp;&nbsp;Usuário:&nbsp;&nbsp;</span></td>
                                             <td width="250px" style="text-align:left">
                                                 <span class="lblUSUARIO" id="lblUSUARIO">
                                                     <?php
                                                     $usuario = $_SESSION['idUSUARIO_LOGADO'];
-                                                    echo substr($usuario, 0, strpos($usuario, ';')) . ' (' . substr($usuario, strpos($usuario, ';') + 1) . ')';
+                                                    if ($_SESSION['usarTipoIMAGEM'] == '_HD') {
+                                                        echo substr($usuario, 0, strpos($usuario, ';')) . ' (' . substr($usuario, strpos($usuario, ';') + 1) . ')';
+                                                    } else {
+                                                        echo substr($usuario, 0, strpos($usuario, ';'));
+                                                    }
                                                     ?>
+                                                    &nbsp;|&nbsp;<a href="" onclick="Sair();">Sair</a>
                                                 </span>
                                             </td>
                                         </tr>
                                     </table>
-                                <td><span class="lblACAO" id="lblACAO" style="display:none">&nbsp;</span></td>
-                                <?php
-                            } else {
-                                ?>
-                                <td width="60%" align="right" >
-                                    <table width="100%" style="text-align:right">
-                                        <tr>
-                                            <td>
-                                                <table>
-                                                    <tr>
-                                                        <td ><span class="lblTitUSUARIO">&nbsp;&nbsp;&nbsp;Usuário:&nbsp;&nbsp;</span></td>
-                                                        <td style="text-align:left">
-                                                            <span class="lblUSUARIO" id="lblUSUARIO">
-                                                                <?php
-                                                                $usuario = $_SESSION['idUSUARIO_LOGADO'];
-                                                                echo substr($usuario, 0, strpos($usuario, ';'));
-                                                                ?>
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <span class="lblACAO" id="lblACAO" style="display:none">&nbsp;</span>
-                                </td>
-                                <?php
-                            }
-                            ?>
+                                </div>                                  
+                                <div><span class="lblACAO" id="lblACAO" style="display:none">&nbsp;</span></div>
+                            </td>
+                            <td style="border: 1px solid #000000; background-color: #ffffff">
+                                <iframe id="framePRINCIPAL" name="framePRINCIPAL"
+                                        allowfullscreen="" accesskey="" style="width:100%; border: 0px solid #cccccc; overflow: auto;" 
+                                        width="100%" ></iframe>                                
+                            </td>
                         </tr>
                     </table>
-                </td>
-            </tr>
-            <tr>
-                <td>  
-                    <iframe  id="framePRINCIPAL" name="framePRINCIPAL" 
-                             style="width:100%;height:100%;" width="100%" scrolling="no"></iframe>  
-                </td>
-            </tr>
+                </td>                
+            </tr>            
         </table>
         <!--  cmp usado constantemente para enviar info entre arquivos PHP -->
         <input type="hidden" id="infoTrab" value="" />
