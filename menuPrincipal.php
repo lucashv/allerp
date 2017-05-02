@@ -202,7 +202,7 @@ session_start();
                                     if (strpos($permissoes, 'D') !== false || $idUSUARIO == 1) {
                                         ?>
                                         <div width="5%" title="Corretores" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(0);">
-                                            <img src="images/BR_representantes.png" alt="" />
+                                            <img src="images/BR_representantes.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
@@ -210,7 +210,7 @@ session_start();
                                         ?>
                                         <div width="5%" title="Produtos" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
                                             onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(43);"> 
-                                            <img src="images/BR_planos.png" alt="" />
+                                            <img src="images/BR_planos.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
@@ -218,35 +218,35 @@ session_start();
                                         ?>
                                         <div width="5%" title="Créditos/Débitos" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
                                             onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(4);">
-                                            <img src="images/BR_creditos2.png" alt="" />
+                                            <img src="images/BR_creditos2.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
                                     if ((strpos($permissoes, 'J') !== false || strpos($permissoes, 'U') !== false) || $idUSUARIO == 1) {
                                         ?>
                                         <div width="5%" title="Propostas" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(11);">
-                                            <img src="images/BR_propostas.png" alt="" />
+                                            <img src="images/BR_propostas.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
                                     if (strpos($permissoes, 'R') !== false || $idUSUARIO == 1) {
                                         ?>
                                         <div width="5%" title="Confirmações" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(27);">
-                                            <img src="images/BR_baixar.png" alt="" />
+                                            <img src="images/BR_baixar.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
                                     if ((strpos($permissoes, 'H') !== false || strpos($permissoes, 'I') !== false) || $idUSUARIO == 1) {
                                         ?>
                                         <div width="5%" title="Caixa" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(23);">
-                                            <img src="images/BR_caixa.png" alt="" />
+                                            <img src="images/BR_caixa.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
                                     if ((strpos($permissoes, 'K') !== false) || $idUSUARIO == 1) {
                                         ?>
                                         <div width="5%" title="Operadores do sistema" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(2);">
-                                            <img src="images/BR_operadores.png" alt="" />
+                                            <img src="images/BR_operadores.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
@@ -257,7 +257,7 @@ session_start();
                                     if ((strpos($permissoes, 'S') !== false || strpos($permissoes, 'T') !== false) || $idUSUARIO == 1) {
                                         ?>
                                         <div width="5%" title="Plantão" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(28);">
-                                            <img src="images/BR_ligacoes.png" alt="" />
+                                            <img src="images/BR_ligacoes.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
@@ -267,7 +267,7 @@ session_start();
                                         ?>
                                         <div width="5%" title="Seguros" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" 
                                             onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(38);">
-                                            <img src="images/BR_seguros.png" alt="" />
+                                            <img src="images/BR_seguros.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
@@ -276,7 +276,7 @@ session_start();
                                     if ((strpos($permissoes, 'Q') !== false) || $idUSUARIO == 1) {
                                         ?>
                                         <div width="5%" title="Relatórios" align="center" onmouseover="this.className = 'btnBarraRapidaSelecionado'" onmouseout="this.className = 'btnBarraRapidaNaoSelecionado'" onclick="Ir(26);">
-                                            <img src="images/BR_relatorios.png" alt="" />
+                                            <img src="images/BR_relatorios.png" alt="" width="48" height="48" />
                                         </div>
                                         <?
                                     }
