@@ -19,7 +19,6 @@ position: absolute; top: 200px; top:50%; left: 50%;
 width: 50px; height: 50px;	margin-top: -40px; margin-left: -10px; display:block; 
 z-index:20; 
 }
-}
 </style>
 
 <div id="divAJAX" class="cssDIV_ESCONDE"  style="text-align:center;" bgcolor=red>
